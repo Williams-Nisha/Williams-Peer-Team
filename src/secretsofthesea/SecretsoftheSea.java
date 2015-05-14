@@ -5,7 +5,10 @@
  */
 package secretsofthesea;
 
+import byui.cit260.secretsoftheSea.model.DockedScene;
+import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Player;
+import byui.cit260.secretsoftheSea.model.WaterScene;
 
 /**
  *
@@ -24,6 +27,31 @@ public class SecretsoftheSea {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        Location locationOne = new Location();
+        
+        locationOne.setVisited(true);
+        locationOne.setAmountRemaining(7.00);
+        locationOne.setWater(true);
+        locationOne.setLand(true);        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+
+        WaterScene waterSceneOne = new WaterScene();
+        
+        waterSceneOne.setDescription("San Francisco");
+        waterSceneOne.setSymbol(true);   
+        String waterSceneInfo = waterSceneOne.toString();
+        System.out.println(waterSceneInfo);
+        
+        DockedScene dockedSceneOne = new DockedScene();
+        
+        dockedSceneOne.setDescription("San Francisco");
+        dockedSceneOne.setNumberOfItems(45); 
+        dockedSceneOne.setSymbol(true);   
+        String dockedSceneInfo = dockedSceneOne.toString();
+        System.out.println(dockedSceneInfo);
+
     }
     
 }
