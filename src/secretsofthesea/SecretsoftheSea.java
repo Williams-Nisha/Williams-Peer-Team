@@ -8,6 +8,7 @@ package secretsofthesea;
 
 import byui.cit260.secretsoftheSea.model.Player;
 import byui.cit260.secretsoftheSea.model.Crew;
+import byui.cit260.secretsoftheSea.model.Game;
 
 /**
  *
@@ -33,9 +34,15 @@ public class SecretsoftheSea {
         crewOne.setDescription("Galley");
         crewOne.setType("Who knows");
         
-        
         String crewInfo = crewOne.toString();
         System.out.println(crewInfo);
+        
+        Game gameOne = new Game();
+        
+        gameOne.setTotalTime(14.36);
+        
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
         
         
     }
