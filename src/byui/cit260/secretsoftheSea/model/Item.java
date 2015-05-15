@@ -12,13 +12,12 @@ import java.util.Objects;
  *
  * @author Nisha
  */
-public class DockedScene implements Serializable {
+public class Item implements Serializable{
     //class instance variables
     private String description;
-    private int numberOfItems;  
-    private boolean symbol;  
+    private String color; 
 
-    public DockedScene() {
+    public Item() {
     }
 
     public String getDescription() {
@@ -29,33 +28,24 @@ public class DockedScene implements Serializable {
         this.description = description;
     }
 
-    public int getNumberOfItems() {
-        return numberOfItems;
+    public String getColor() {
+        return color;
     }
 
-    public void setNumberOfItems(int numberOfItems) {
-        this.numberOfItems = numberOfItems;
-    }
-
-    public boolean isSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(boolean symbol) {
-        this.symbol = symbol;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override
     public String toString() {
-        return "DockedScene{" + "description=" + description + ", numberOfItems=" + numberOfItems + ", symbol=" + symbol + '}';
+        return "Item{" + "description=" + description + ", color=" + color + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + this.numberOfItems;
-        hash = 59 * hash + (this.symbol ? 1 : 0);
+        int hash = 5;
+        hash = 43 * hash + Objects.hashCode(this.description);
+        hash = 43 * hash + Objects.hashCode(this.color);
         return hash;
     }
 
@@ -67,18 +57,14 @@ public class DockedScene implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final DockedScene other = (DockedScene) obj;
+        final Item other = (Item) obj;
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (this.numberOfItems != other.numberOfItems) {
-            return false;
-        }
-        if (this.symbol != other.symbol) {
+        if (!Objects.equals(this.color, other.color)) {
             return false;
         }
         return true;
     }
-    
-    
+
 }

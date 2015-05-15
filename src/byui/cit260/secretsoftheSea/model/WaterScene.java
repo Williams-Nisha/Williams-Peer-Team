@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author Nisha
  */
 public class WaterScene implements Serializable{
-    //class instance vari
+    //class instance variables
     private String description;
     private boolean symbol;  
 

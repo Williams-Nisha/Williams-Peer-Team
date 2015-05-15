@@ -9,6 +9,10 @@ import byui.cit260.secretsoftheSea.model.DockedScene;
 import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Player;
 import byui.cit260.secretsoftheSea.model.WaterScene;
+import byui.cit260.secretsoftheSea.model.Crew;
+import byui.cit260.secretsoftheSea.model.Game;
+import byui.cit260.secretsoftheSea.model.InventoryList;
+import byui.cit260.secretsoftheSea.model.Item;
 
 /**
  *
@@ -51,39 +55,6 @@ public class SecretsoftheSea {
         dockedSceneOne.setSymbol(true);   
         String dockedSceneInfo = dockedSceneOne.toString();
         System.out.println(dockedSceneInfo);
-
-    }
-    
-}
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package secretsofthesea;
-
-import byui.cit260.secretsoftheSea.model.Player;
-import byui.cit260.secretsoftheSea.model.Crew;
-import byui.cit260.secretsoftheSea.model.Game;
-
-/**
- *
- * @author Lorien
- */
-public class SecretsoftheSea {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Player playerOne = new Player();
-        
-        playerOne.setName("Fred Flinstone");
-        playerOne.setBestTime(7.00);
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
         
         Crew crewOne = new Crew();
         
@@ -100,8 +71,21 @@ public class SecretsoftheSea {
         
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
+    
+        InventoryList inventoryListOne = new InventoryList();
         
+        inventoryListOne.setInventoryType("China");
+        inventoryListOne.setQuantityInStock(100); 
+        inventoryListOne.setRequiredAmount(75.5);   
+        String inventoryListInfo = inventoryListOne.toString();
+        System.out.println(inventoryListInfo);
+
+        Item itemOne = new Item();
         
+        itemOne.setDescription("15 gold pieces");
+        itemOne.setColor("blue"); 
+        String itemInfo = itemOne.toString();
+        System.out.println(itemInfo);
     }
     
 }
