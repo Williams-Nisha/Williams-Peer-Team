@@ -9,6 +9,9 @@ package secretsofthesea;
 import byui.cit260.secretsoftheSea.model.Player;
 import byui.cit260.secretsoftheSea.model.Crew;
 import byui.cit260.secretsoftheSea.model.Game;
+import byui.cit260.secretsoftheSea.model.Ship;
+import byui.cit260.secretsoftheSea.model.Map;
+import byui.cit260.secretsoftheSea.model.AirScene;
 
 /**
  *
@@ -31,7 +34,7 @@ public class SecretsoftheSea {
         Crew crewOne = new Crew();
         
         crewOne.setName("Marker");
-        crewOne.setDescription("Galley");
+        crewOne.setDescription("Strong");
         crewOne.setType("Who knows");
         
         String crewInfo = crewOne.toString();
@@ -43,6 +46,30 @@ public class SecretsoftheSea {
         
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
+        
+        Ship shipOne = new Ship();
+        
+        shipOne.setDescription("Twenty Foot");
+        shipOne.setType("Galley");
+        
+        String shipInfo = shipOne.toString();
+        System.out.println(shipInfo);
+        
+        Map mapOne = new Map();
+        
+        mapOne.setWaterNumber(9);
+        mapOne.setLandNumber(5);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        AirScene airsceneOne = new AirScene();
+        
+        airsceneOne.setDescription("In Air");
+        airsceneOne.setSymbol("Blue Circle");
+        
+        String airsceneInfo = airsceneOne.toString();
+        System.out.println(airsceneInfo);
         
         
     }
