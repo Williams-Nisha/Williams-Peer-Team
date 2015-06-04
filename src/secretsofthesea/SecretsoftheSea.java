@@ -24,6 +24,8 @@ import citbyui.cit260secretsoftheSea.view.StartProgramView;
  */
 public class SecretsoftheSea {
 
+       private static Game currentGame = null;
+       private static Player player = null;
     /**
      * @param args the command line arguments
      */
@@ -33,5 +35,20 @@ public class SecretsoftheSea {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
         
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        SecretsoftheSea.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+    public static void setPlayer(Player player) {
+        SecretsoftheSea.player = player;
     }
 }

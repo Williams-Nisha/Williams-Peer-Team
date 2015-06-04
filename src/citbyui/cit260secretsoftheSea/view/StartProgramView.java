@@ -5,6 +5,10 @@
  */
 package citbyui.cit260secretsoftheSea.view;
 
+import byui.cit260.secretsoftheSea.control.ProgramControl;
+import byui.cit260.secretsoftheSea.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author Lorien
@@ -21,10 +25,15 @@ public class StartProgramView {
             //Get the players name
             String playersName = this.getPlayersName();
             
-            //Create a new player
+            //Create and save a new player object
+            Player player = ProgramControl.createPlayer(playersName);
+            
             //DISPLAY a customized welcome message
+            this.displayWelcomeMessage(player);
+            
             //DISPLAY the main menu
-
+               MainMenuView mainMenu = new MainMenuView();
+               mainMenu.displayMenu();
 
 }
 
@@ -68,6 +77,35 @@ public class StartProgramView {
     }
 
     private String getPlayersName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         boolean valid = false; // indicates if the name has been retrieved 
+         String playersName = null;
+         Scanner keyboard = new Scanner(System.in); // keyboard input stream
+         
+         while(!valid) { // while a valid name has not been retrieved 
+             
+             // prompt for the player's name
+             System.out.println("Enter the player's name below:");
+             
+             // get the name from the keyboard and trim off the blanks
+             playersName = keyboard.nextLine();
+             playersName = playersName.trim();
+             
+             // if the name is invalid (less than two character in length))
+             if (playersName.length() < 2) {
+                 System.out.println("Invalid name - the name must not be blank");
+                 continue; // and repeat again
+                 
+             }
+             break; // out of the (exit) the repetition 
+         }
+         
+         return playersName; // return the name
     }
-}
+
+    public void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n=====================================");
+        System.out.println("\tWelcome to the game, " + player.getName());
+        System.out.println("\tWe hope you have a lot of fun!");
+        System.out.println("=========================================");
+    }
+    }
