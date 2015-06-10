@@ -5,26 +5,25 @@
  */
 package citbyui.cit260secretsoftheSea.view;
 
-import byui.cit260.secretsoftheSea.control.GameControl;
 import java.util.Scanner;
-import secretsofthesea.SecretsoftheSea;
 
 /**
  *
  * @author Lorien
  */
-public class MainMenuView {
-       
+public class MovetonewLocation {
+    
     private final String MENU = "\n"
             + "\n----------------------------------"
-            + "\n|Main Menu                       |"
+            + "\n|Move Menu                       |"
             + "\n----------------------------------"
-            + "\nG - Start Game"
-            + "\nH - Get help on how to play the game"
-            + "\nS - Save game"
+            + "\nU - Move Up"
+            + "\nD - Move Down"
+            + "\nL - Move Left"
+            + "\nR - Move Right"
             + "\nE - Exit"
             + "\n----------------------------------";
-
+    
     public void displayMenu() {
         
            char selection = ' ';
@@ -69,17 +68,17 @@ public class MainMenuView {
     private void doAction(char choice) {
         
         switch (choice) {
-            case 'N': // create and start a new game
-                this.startNewGame();
+            case 'U': // move up
+                this.moveUp();
                 break;
-            case 'G': // get and start an existing game
-                this.startExistingGame();
+            case 'D': // move down
+                this.moveDown();
                 break;
-            case 'H': // display the help menu
-                this.displayHelpMenu();
+            case 'L': // move left
+                this.moveLeft();
                 break;
-            case 'S': // save the current game
-                this.saveGame();
+            case 'R': // move right
+                System.out.println(this.moveRight());
                 break;
             case 'E': // exit the program
                 return;
@@ -90,27 +89,21 @@ public class MainMenuView {
         
     }
 
-    private void startNewGame() { 
-         // create new game
-        GameControl.createNewGame(SecretsoftheSea.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void moveUp() {
+         System.out.println("*** moveUp function called ***");
     }
 
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+    private void moveDown() {
+        System.out.println("*** moveDown function called ***");
     }
 
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+    private void moveLeft() {
+        System.out.println("*** moveLeft function called ***");
     }
 
-    private void saveGame() {
-        System.out.println("*** startExistingGame function called ***");
+    private String moveRight() {
+        return "*** moveRight function called ***";
     }
-    }
+
     
-
+}
