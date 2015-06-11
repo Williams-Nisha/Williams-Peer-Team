@@ -3,27 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260secretsoftheSea.view;
+package byui.cit260.secretsoftheSea.view;
 
+import byui.cit260.secretsoftheSea.control.GameControl;
 import java.util.Scanner;
+import secretsofthesea.SecretsoftheSea;
 
 /**
  *
  * @author Lorien
  */
-public class MovetonewLocation {
-    
+public class MainMenuView {
+       
     private final String MENU = "\n"
             + "\n----------------------------------"
-            + "\n|Move Menu                       |"
+            + "\n|Main Menu                       |"
             + "\n----------------------------------"
-            + "\nU - Move Up"
-            + "\nD - Move Down"
-            + "\nL - Move Left"
-            + "\nR - Move Right"
+            + "\nG - Start Game"
+            + "\nH - Get help on how to play the game"
+            + "\nS - Save game"
             + "\nE - Exit"
             + "\n----------------------------------";
-    
+
     public void displayMenu() {
         
            char selection = ' ';
@@ -68,17 +69,17 @@ public class MovetonewLocation {
     private void doAction(char choice) {
         
         switch (choice) {
-            case 'U': // move up
-                this.moveUp();
+            case 'N': // create and start a new game
+                this.startNewGame();
                 break;
-            case 'D': // move down
-                this.moveDown();
+            case 'G': // get and start an existing game
+                this.startExistingGame();
                 break;
-            case 'L': // move left
-                this.moveLeft();
+            case 'H': // display the help menu
+                this.displayHelpMenu();
                 break;
-            case 'R': // move right
-                System.out.println(this.moveRight());
+            case 'S': // save the current game
+                this.saveGame();
                 break;
             case 'E': // exit the program
                 return;
@@ -89,21 +90,27 @@ public class MovetonewLocation {
         
     }
 
-    private void moveUp() {
-         System.out.println("*** moveUp function called ***");
+    private void startNewGame() { 
+         // create new game
+        GameControl.createNewGame(SecretsoftheSea.getPlayer());
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
-    private void moveDown() {
-        System.out.println("*** moveDown function called ***");
+    private void startExistingGame() {
+        System.out.println("*** startExistingGame function called ***");
     }
 
-    private void moveLeft() {
-        System.out.println("*** moveLeft function called ***");
+    private void displayHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
     }
 
-    private String moveRight() {
-        return "*** moveRight function called ***";
+    private void saveGame() {
+        System.out.println("*** startExistingGame function called ***");
     }
-
+    }
     
-}
+

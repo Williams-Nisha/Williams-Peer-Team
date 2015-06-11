@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260secretsoftheSea.view;
+package byui.cit260.secretsoftheSea.view;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Lorien
  */
-public class DockTheShip {
+public class MovetonewLocation {
     
     private final String MENU = "\n"
             + "\n----------------------------------"
@@ -21,7 +21,6 @@ public class DockTheShip {
             + "\nD - Move Down"
             + "\nL - Move Left"
             + "\nR - Move Right"
-            + "\nK - Dock"
             + "\nE - Exit"
             + "\n----------------------------------";
     
@@ -68,32 +67,30 @@ public class DockTheShip {
 
     private void doAction(char choice) {
         
-        if (choice == 'U') {
+        switch (choice) {
+            case 'U': // move up
                 this.moveUp();
-        }
-        else if (choice == 'D') {
+                break;
+            case 'D': // move down
                 this.moveDown();
-        }
-        else if (choice == 'L') {
+                break;
+            case 'L': // move left
                 this.moveLeft();
-        }
-        else if (choice == 'R') {
+                break;
+            case 'R': // move right
                 System.out.println(this.moveRight());
-        }
-        else if (choice == 'K') {
-                this.dockShip();
-        }
-        else if (choice == 'E') {
+                break;
+            case 'E': // exit the program
                 return;
-        }
-        else    {
+            default:
                 System.out.println("\n*** Invalid selection *** Try again");
+                break;
         }
         
     }
 
     private void moveUp() {
-        System.out.println("*** moveUp function called ***");
+         System.out.println("*** moveUp function called ***");
     }
 
     private void moveDown() {
@@ -105,10 +102,8 @@ public class DockTheShip {
     }
 
     private String moveRight() {
-         return ("*** moveRight function called ***");
+        return "*** moveRight function called ***";
     }
 
-    private void dockShip() {
-        System.out.println("*** dockShip function called ***");
-    }
+    
 }

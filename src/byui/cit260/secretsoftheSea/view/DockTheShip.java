@@ -3,28 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260secretsoftheSea.view;
+package byui.cit260.secretsoftheSea.view;
 
-import byui.cit260.secretsoftheSea.control.GameControl;
 import java.util.Scanner;
-import secretsofthesea.SecretsoftheSea;
 
 /**
  *
  * @author Lorien
  */
-public class MainMenuView {
-       
+public class DockTheShip {
+    
     private final String MENU = "\n"
             + "\n----------------------------------"
-            + "\n|Main Menu                       |"
+            + "\n|Move Menu                       |"
             + "\n----------------------------------"
-            + "\nG - Start Game"
-            + "\nH - Get help on how to play the game"
-            + "\nS - Save game"
+            + "\nU - Move Up"
+            + "\nD - Move Down"
+            + "\nL - Move Left"
+            + "\nR - Move Right"
+            + "\nK - Dock"
             + "\nE - Exit"
             + "\n----------------------------------";
-
+    
     public void displayMenu() {
         
            char selection = ' ';
@@ -68,49 +68,47 @@ public class MainMenuView {
 
     private void doAction(char choice) {
         
-        switch (choice) {
-            case 'N': // create and start a new game
-                this.startNewGame();
-                break;
-            case 'G': // get and start an existing game
-                this.startExistingGame();
-                break;
-            case 'H': // display the help menu
-                this.displayHelpMenu();
-                break;
-            case 'S': // save the current game
-                this.saveGame();
-                break;
-            case 'E': // exit the program
+        if (choice == 'U') {
+                this.moveUp();
+        }
+        else if (choice == 'D') {
+                this.moveDown();
+        }
+        else if (choice == 'L') {
+                this.moveLeft();
+        }
+        else if (choice == 'R') {
+                System.out.println(this.moveRight());
+        }
+        else if (choice == 'K') {
+                this.dockShip();
+        }
+        else if (choice == 'E') {
                 return;
-            default:
+        }
+        else    {
                 System.out.println("\n*** Invalid selection *** Try again");
-                break;
         }
         
     }
 
-    private void startNewGame() { 
-         // create new game
-        GameControl.createNewGame(SecretsoftheSea.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void moveUp() {
+        System.out.println("*** moveUp function called ***");
     }
 
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+    private void moveDown() {
+        System.out.println("*** moveDown function called ***");
     }
 
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+    private void moveLeft() {
+        System.out.println("*** moveLeft function called ***");
     }
 
-    private void saveGame() {
-        System.out.println("*** startExistingGame function called ***");
+    private String moveRight() {
+         return ("*** moveRight function called ***");
     }
-    }
-    
 
+    private void dockShip() {
+        System.out.println("*** dockShip function called ***");
+    }
+}
