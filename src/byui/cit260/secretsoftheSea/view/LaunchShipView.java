@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260secretsoftheSea.view;
+package byui.cit260.secretsoftheSea.view;
 
 import byui.cit260.secretsoftheSea.control.ShipControl;
 import java.util.Scanner;
