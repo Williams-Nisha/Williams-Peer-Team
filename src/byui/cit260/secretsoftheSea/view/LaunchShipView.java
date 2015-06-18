@@ -12,26 +12,27 @@ import java.util.Scanner;
  *
  * @author Nisha
  */
-public class LaunchShipView extends View{
+public class LaunchShipView extends View {
 
-    public LaunchShipView(){
+    public LaunchShipView() {
         super("\n----------------------------------"
-            + "\n|Launch Ship                      |"
-            + "\n----------------------------------"
-            + "\nU - Move Up"
-            + "\nD - Move Down"
-            + "\nL - Move Left"
-            + "\nR - Move Right"
-            + "\nM - Launch"
-            + "\nE - Exit"
-            + "\n----------------------------------");
+                + "\n|Launch Ship                      |"
+                + "\n----------------------------------"
+                + "\nU - Move Up"
+                + "\nD - Move Down"
+                + "\nL - Move Left"
+                + "\nR - Move Right"
+                + "\nM - Launch"
+                + "\nE - Exit"
+                + "\n----------------------------------");
     }
+
     @Override
     public boolean doAction(Object obj) {
 
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
-        char choice = value.charAt(0);        
+        char choice = value.charAt(0);
 
         if (choice == 'U') {
             System.out.println("Move Up");
@@ -43,12 +44,15 @@ public class LaunchShipView extends View{
             System.out.println("Move Right");
         } else if (choice == 'L') {
             checkLaunch();
+        } else if (choice == 'E') {
+            return true;
         } else {
             System.out.println("***Please enter a valid selection");
         }
         return false;
     }
-            private void checkLaunch() {
+
+    private void checkLaunch() {
         ShipControl ins = new ShipControl();
     }
-    }
+}
