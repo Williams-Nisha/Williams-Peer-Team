@@ -9,26 +9,28 @@ import java.util.Scanner;
 
 /**
  *
- * @author 
+ * @author
  */
 public class HelpMenuView extends View {
 
     public HelpMenuView() {
         super("\n----------------------------------"
-            + "\n|Help Menu                       |"
-            + "\n----------------------------------"
-            + "\nG - What is the goal of the game?"
-            + "\nM - How to move"
-            + "\nE - Explore the location"
-            + "\nI - View Inventory"
-            + "\nS - View ship's status"
-            + "\nX - Exchange resources"
-            + "\nL - Launch the ship"
-            + "\nW - Dock the ship"
-            + "\nQ - Quit"
-            + "\n----------------------------------");
+                + "\n|Help Menu                       |"
+                + "\n----------------------------------"
+                + "\nG - What is the goal of the game?"
+                + "\nM - How to move"
+                + "\nE - Explore the location"
+                + "\nI - View Inventory"
+                + "\nS - View ship's status"
+                + "\nX - Exchange resources"
+                + "\nW - Work on Ship"
+                + "\nL - Launch the ship"
+                + "\nW - Dock the ship"
+                + "\nQ - Quit"
+                + "\n----------------------------------");
     }
-        @Override
+
+    @Override
 
     public boolean doAction(Object obj) {
 
@@ -55,6 +57,9 @@ public class HelpMenuView extends View {
             case 'X': // exchange resources
                 System.out.println("\n*** X ***");
                 break;
+            case 'W': // work on ship
+                System.out.println("\n*** W ***");
+                break;
             case 'L': // launch ship
                 System.out.println("\n*** L ***");
                 break;
@@ -67,7 +72,7 @@ public class HelpMenuView extends View {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-            return false;
+        return false;
     }
 
 }

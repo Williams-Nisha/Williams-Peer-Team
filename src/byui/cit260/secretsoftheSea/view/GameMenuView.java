@@ -20,6 +20,7 @@ public class GameMenuView extends View {
                 + "\nI - View list of inventory items"
                 + "\nS - View ship status"
                 + "\nX - Exchange resources"
+                + "\nW-  Work on ship"
                 + "\nL - Launch the ship"
                 + "\nD - Dock the ship"
                 + "\nH - Help menu"
@@ -48,9 +49,12 @@ public class GameMenuView extends View {
             case 'S'://view ship status
                 this.shipStatus();
                 return true;
-        //    case 'X'://display exchange resources menu
+            //    case 'X'://display exchange resources menu
             //        this.exchangeResources();
             //        return true;
+            //case 'W'://display work on shi[
+            //    this.workOnShip();
+            //    return true;
             case 'L'://display launch ship menu
                 this.launchShip();
                 return true;
@@ -107,4 +111,8 @@ public class GameMenuView extends View {
         helpMenu.display();
     }
 
-}
+//    private void workOnShip() {
+//        WorkOnShipView workOnShip = new WorkOnShipView();
+//        workOnShip.display();
+    }
+
