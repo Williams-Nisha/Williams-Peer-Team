@@ -32,7 +32,7 @@ public class GameMenuView extends View {
 
     public boolean doAction(Object obj) {
 
-        String value = (String) obj;
+        String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
         char choice = value.charAt(0);
 

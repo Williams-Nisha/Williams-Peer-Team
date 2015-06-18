@@ -19,6 +19,7 @@ public class MainMenuView extends View {
         super("\n----------------------------------"
             + "\n|Main Menu                       |"
             + "\nG - Start Game"
+            + "\nN - New Game"
             + "\nH - Get help on how to play the game"
             + "\nS - Save game"
             + "\nE - Exit"
@@ -29,8 +30,8 @@ public class MainMenuView extends View {
     @Override
     public boolean doAction(Object obj) {
         
-        String value = (String)obj;
-        value = value.toUpperCase();//conver to all upper case
+        String value = String.valueOf(obj);
+        value = value.toUpperCase();//convert to all upper case
         char choice = value.charAt(0);
         
         switch (choice) {
