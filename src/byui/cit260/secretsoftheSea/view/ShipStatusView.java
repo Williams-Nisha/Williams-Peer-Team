@@ -13,10 +13,10 @@ import secretsofthesea.SecretsoftheSea;
  *
  * @author kayla
  */
-public class ShipStatusView {
+public class ShipStatusView extends View {
 
-    private final String ShipStatus = "\n"
-            + "\n----------------------------------"
+    public ShipStatusView(){
+        super("\n----------------------------------"
             + "\n|Ship Status                       |"
             + "\n----------------------------------"
             + "\nT - Storage"
@@ -24,49 +24,18 @@ public class ShipStatusView {
             + "\nP - Speed"
             + "\nD - Defense"
             + "\nE - Exit"
-            + "\n----------------------------------";
-
-    public void ShipStatus() {
-        char selection = ' ';
-        do {
-            System.out.println(ShipStatus); // display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'E'); // a selection is not "Exit"
+            + "\n----------------------------------");
     }
 
-    private String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved 
-        String choice = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
+        @Override
 
-        while (!valid) { // while a valid name has not been retrieved 
+    public boolean doAction(Object obj) {
 
-            // prompt for the player's name
-            System.out.println("Please enter your selection below:");
+        String value = (String) obj;
+        value = value.toUpperCase();//conver to all upper case
+        char choice = value.charAt(0);
 
-            // get the name from the keyboard and trim off the blanks
-            choice = keyboard.next();
-            choice = choice.trim();
-
-            // if the name is invalid (less than two character in length))
-            if (choice.length() > 1) {
-                System.out.println("Invalid selection - please try again");
-                continue; // and repeat again
-
-            }
-            break; // out of the (exit) the repetition 
-        }
-
-        return choice; // return the name
-    }
-
-    private void doAction(char selection) {
-                switch (selection) {
+                switch (choice) {
             case 'T': // create and start a new game
                 this.storage ();
                 break;
@@ -80,11 +49,12 @@ public class ShipStatusView {
                 this.defense ();
                 break;
             case 'E': // exit the program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+                return false;
     }
 
     private void storage() {

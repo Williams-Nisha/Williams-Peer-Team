@@ -12,13 +12,10 @@ import java.util.Scanner;
  *
  * @author Nisha
  */
-public class ViewListInventoryView {
+public class ViewListInventoryView extends View {
 
     public ViewListInventoryView() {
-    }
-
-    private final String MENU = "\n"
-            + "\n----------------------------------"
+        super("\n----------------------------------"
             + "\n|Inventory Items  - Supplies      |"
             + "\n----------------------------------"
             + "\nF - Food - each unit is 100 lbs"
@@ -26,50 +23,15 @@ public class ViewListInventoryView {
             + "\nG - Fuel - each unit is 40 lbs"
             + "\nM - Munitions - each unit is 20 lbs"
             + "\nQ - Quit "
-            + "\n----------------------------------";
-
-    public void displayMenu() {
-
-        char selection = ' ';
-        do {
-            System.out.println(MENU); // display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'Q'); // a selection is not "Quit"
+            + "\n----------------------------------");
     }
-
-    private String getInput() {
-
-        boolean valid = false; // indicates if the supply has been retrieved 
-        String choice = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
-
-        while (!valid) { // while a valid input has not been retrieved 
-
-            // prompt for the supply Letter
-            System.out.println("You will need the following supplies. Please select each supply and how many units you would like. Please enter the letter for the supply you are choosing.");
-
-            // get the name from the keyboard and trim off the blanks
-            choice = keyboard.next();
-            choice = choice.trim();
-
-            // if the name is invalid (less than two character in length))
-            if (choice.length() > 1) {
-                System.out.println("Invalid selection - please try again");
-                continue; // and repeat again
-
-            }
-            break; // out of the (exit) the repetition 
-        }
-
-        return choice; // return the name
-    }
-
-    private void doAction(char choice) {
+     @Override
+    public boolean doAction(Object obj) {
+        
+        String value = (String)obj;
+        value = value.toUpperCase();//conver to all upper case
+        char choice = value.charAt(0);
+        
 
         switch (choice) {
             case 'F':
@@ -90,12 +52,12 @@ public class ViewListInventoryView {
                 break;
 
             case 'Q': // quit program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-
+            return false;
     }
 
     private void getInput2(String name, double weight) {

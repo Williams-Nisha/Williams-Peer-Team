@@ -12,10 +12,10 @@ import java.util.Scanner;
  *
  * @author Nisha
  */
-public class LaunchShipView {
+public class LaunchShipView extends View{
 
-    private final String MENU = "\n"
-            + "\n----------------------------------"
+    public LaunchShipView(){
+        super("\n----------------------------------"
             + "\n|Launch Ship                      |"
             + "\n----------------------------------"
             + "\nU - Move Up"
@@ -24,50 +24,14 @@ public class LaunchShipView {
             + "\nR - Move Right"
             + "\nM - Launch"
             + "\nE - Exit"
-            + "\n----------------------------------";
-
-    public void displayMenu() {
-
-        char selection = ' ';
-        do {
-            System.out.println(MENU); // display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'E'); // a selection is not "Exit"
+            + "\n----------------------------------");
     }
+    @Override
+    public boolean doAction(Object obj) {
 
-    private String getInput() {
-
-        boolean valid = false; // indicates if the name has been retrieved 
-        String choice = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
-
-        while (!valid) { // while a valid name has not been retrieved 
-
-            // prompt for the player's name
-            System.out.println("To launch ship, enter L. To position ship, enter movement.");
-
-            // get the name from the keyboard and trim off the blanks
-            choice = keyboard.next();
-            choice = choice.trim();
-
-            // if the name is invalid (less than two character in length))
-            if (choice.length() > 1) {
-                System.out.println("Invalid selection - please try again");
-                continue; // and repeat again
-
-            }
-            break; // out of the (exit) the repetition 
-        }
-
-        return choice; // return the name
-    }
-
-    private void doAction(char choice) {
+        String value = (String) obj;
+        value = value.toUpperCase();//conver to all upper case
+        char choice = value.charAt(0);        
 
         if (choice == 'U') {
             System.out.println("Move Up");
@@ -82,6 +46,7 @@ public class LaunchShipView {
         } else {
             System.out.println("***Please enter a valid selection");
         }
+        return false;
     }
             private void checkLaunch() {
         ShipControl ins = new ShipControl();
