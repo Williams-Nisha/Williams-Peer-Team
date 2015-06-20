@@ -49,9 +49,9 @@ public class GameMenuView extends View {
             case 'S'://view ship status
                 this.shipStatus();
                 return true;
-            //    case 'X'://display exchange resources menu
-            //        this.exchangeResources();
-            //        return true;
+            case 'X'://display exchange resources menu
+                this.exchangeResources();
+                break;
             //case 'W'://display work on shi[
             //    this.workOnShip();
             //    return true;
@@ -92,10 +92,10 @@ public class GameMenuView extends View {
         shipStatus.display();
     }
 
-    //private void exchangeResources() {
-    //    ExchangeResources exchangeResources = new ExchangeResourcesView();
-    //    exchangeResources.display();//This will not work until ExchangeResourcesView is created
-    //}
+    private void exchangeResources() {
+        ExchangeResourcesView exchangeResources = new ExchangeResourcesView();
+        exchangeResources.display();
+    }
     private void launchShip() {
         LaunchShipView launchShip = new LaunchShipView();
         launchShip.display();
