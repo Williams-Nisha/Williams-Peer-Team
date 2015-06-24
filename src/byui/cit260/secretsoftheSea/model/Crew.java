@@ -12,76 +12,34 @@ import java.util.Objects;
  *
  * @author Lorien
  */
-public class Crew implements Serializable{
+public enum Crew implements Serializable{
+
+    Skivvie Jones("Even though he's bene down to his skivvies a few times, he always find a way out."),
+    One eyed Oscar("Don't let his one eye fool you; he's watching everything."),
+    Timmy Longthumbs("An unscruptulous character, but great at nabbing things in a pinch."),
+    Jack Shortbeard("What he lacks in height he makes up with ambition."),
+    Mulligan Morgan("She's had a few close calls, but always ends up on top."),
+    Freebird Freida("She has a wild spirit, but is loyal.");
+    
     
     // class instance variables
-    private String name;
-    private String description;
-    private String type;
+    private final String description;
+    private final String type;
 
-    public Crew() {
-    }
-    
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    Crew(String description) {
+        this.description = description;
+        type = new Point(1,1);
+}
 
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     public String toString() {
         return "Crew{" + "name=" + name + ", description=" + description + ", type=" + type + '}';
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + Objects.hashCode(this.name);
-        hash = 17 * hash + Objects.hashCode(this.description);
-        hash = 17 * hash + Objects.hashCode(this.type);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Crew other = (Crew) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
-}

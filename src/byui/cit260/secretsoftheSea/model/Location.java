@@ -18,6 +18,8 @@ public class Location implements Serializable{
     private double amountRemaining;
     private boolean water;
     private boolean land;
+    private Scene scene;
+    private ArrayList<Crew> crew;
 
     public Location() {
     }
