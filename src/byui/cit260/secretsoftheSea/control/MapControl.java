@@ -56,6 +56,10 @@ public class MapControl {
         scenes[SceneType.finish.ordinal()] = finishScene;   
     }
 
+    static void moveCrewToStartingLocation(Map map) {
+        System.out.println("This is where the stub function for move crew to starting location.");
+    }
+
     public enum SceneType {
         start, 
         water, 
