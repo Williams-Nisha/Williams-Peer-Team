@@ -6,6 +6,7 @@
 package byui.cit260.secretsoftheSea.view;
 
 import byui.cit260.secretsoftheSea.control.GameControl;
+import byui.cit260.secretsoftheSea.control.MapControlException;
 import java.util.Scanner;
 import secretsofthesea.SecretsoftheSea;
 
@@ -56,7 +57,7 @@ public class MainMenuView extends View {
         return false;
     }
 
-    private void startNewGame() { 
+    private void startNewGame()  { 
          // create new game
         GameControl.createNewGame(SecretsoftheSea.getPlayer());
         

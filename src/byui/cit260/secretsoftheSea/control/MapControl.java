@@ -5,7 +5,13 @@
  */
 package byui.cit260.secretsoftheSea.control;
 
+import byui.cit260.secretsoftheSea.model.Game;
+import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Map;
+import java.awt.image.BufferedImage;
+import byui.cit260.secretsoftheSea.model.Scene;
+import javax.swing.ImageIcon;
+import secretsofthesea.SecretsoftheSea;
 
 /**
  *
@@ -26,10 +32,10 @@ public class MapControl {
         return map;
     }
     
-    private static Scene[] createScenes() throws MapControlException {
+    private static Scene[] createScenes() {
         BufferedImage image = null;
         
-        Game game = secretsoftheSea.getCurrentGame();
+        Game game = SecretsoftheSea.getCurrentGame();
         
         Scene[] scenes = new Scene[SceneType.values().length];
         
@@ -39,9 +45,9 @@ public class MapControl {
         startingScene.setMapSymbol(" ST ");
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
-        ImageIcon startingSceneImage = MapControl.getImage(startingScene,
-                "/citbyui/cit260/secretsofthesea/images/startingpoint.jpg");
-        startingScene.setIcon(startingSceneImage);
+        // ImageIcon startingSceneImage = MapControl.getImage(startingScene,
+        //        "/citbyui/cit260/secretsofthesea/images/startingpoint.jpg");
+        // startingScene.setIcon(startingSceneImage);
         scenes[SceneType.start.ordinal()] = startingScene;
         
         Scene finishScene = new Scene();
@@ -50,14 +56,19 @@ public class MapControl {
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        ImageIcon finishSceneImage = MapControl.getImage(finishScene,
-                "/citbyui/cit260/secretsofthesea/images/finish.jpg");
-            finishScene.setIcon(finishSceneImage);
+        // ImageIcon finishSceneImage = MapControl.getImage(finishScene,
+        //        "/citbyui/cit260/secretsofthesea/images/finish.jpg");
+        //    finishScene.setIcon(finishSceneImage);
         scenes[SceneType.finish.ordinal()] = finishScene;   
+        return scenes;
     }
 
     static void moveCrewToStartingLocation(Map map) {
         System.out.println("This is where the stub function for move crew to starting location.");
+    }
+
+    private static ImageIcon getImage(Scene startingScene, String citbyuicit260secretsoftheseaimagesstartin) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public enum SceneType {

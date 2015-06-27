@@ -11,6 +11,7 @@ import byui.cit260.secretsoftheSea.model.Item;
 import byui.cit260.secretsoftheSea.model.Map;
 import byui.cit260.secretsoftheSea.model.Player;
 import byui.cit260.secretsoftheSea.model.Ship;
+import byui.cit260.secretsoftheSea.model.Scene;
 import secretsofthesea.SecretsoftheSea;
 
 /**
@@ -44,8 +45,8 @@ public class GameControl {
     public static InventoryList[] createInventoryList() {
 
         // created array(list) of inventory items
-        InventoryList[] inventory
-                = new InventoryList[Constants.NUMBER_OF_INVENTORY_LISTS];
+        InventoryList[] inventory =
+                new InventoryList[4];
 
         InventoryList water = new InventoryList();
         water.setDescription("Water");
@@ -81,6 +82,10 @@ public class GameControl {
     //    munition,
     //    fuel;
     //}
+
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        System.out.println();
+    }
 
 }
 

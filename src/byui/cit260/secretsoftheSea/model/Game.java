@@ -90,6 +90,10 @@ public class Game implements Serializable{
         }
         return true;
     }
+
+    public Map getGameMap() {
+        return map;
+    }
     
     
     

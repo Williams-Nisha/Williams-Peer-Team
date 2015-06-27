@@ -5,6 +5,10 @@
  */
 package byui.cit260.secretsoftheSea.view;
 
+import byui.cit260.secretsoftheSea.model.Location;
+import byui.cit260.secretsoftheSea.model.Map;
+import secretsofthesea.SecretsoftheSea;
+
 /**
  *
  * @author Lorien
@@ -19,6 +23,8 @@ public class GameMenuView extends View {
                 + "\nE - Explore a location            "
                 + "\nI - View list of inventory items"
                 + "\nS - View ship status"
+                + "\nV - View Map"
+                + "\nC - View Crew"
                 + "\nX - Exchange resources"
                 + "\nW-  Work on ship"
                 + "\nL - Launch the ship"
@@ -51,6 +57,12 @@ public class GameMenuView extends View {
                 return true;
             case 'X'://display exchange resources menu
                 this.exchangeResources();
+                break;
+            case 'V'://view map
+                this.displayMap();
+                break;
+            case 'C'://view crew
+                this.viewCrew();
                 break;
             //case 'W'://display work on shi[
             //    this.workOnShip();
@@ -114,5 +126,28 @@ public class GameMenuView extends View {
 //    private void workOnShip() {
 //        WorkOnShipView workOnShip = new WorkOnShipView();
 //        workOnShip.display();
+
+    private void displayMap() {
+        Map gameMap = SecretsoftheSea.getCurrentGame().getGameMap();//get Game map by retrieving current game
+        Location[][] locations = gameMap.getLocations();//get locations inside map
+        System.out.println("Map\n");
+        System.out.println("  | 0 | 1 | 2 | 3 | 4 |");
+            for (int r = 0; r < 5; r++) {
+                System.out.print(Integer.toString(r) + " |");
+                for (int c = 0; c < 5; c++) {
+                    if (locations[r][c].isVisited() == false) {
+                       System.out.print("?? |");
+                    } 
+                    else {
+                       System.out.print(locations[r][c].getScene().getMapSymbol() + "|");
+                    }
+                }
+                System.out.println("");
+            }
+    }
+
+    private void viewCrew() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
 

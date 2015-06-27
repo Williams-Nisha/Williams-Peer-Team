@@ -15,7 +15,9 @@ public class Map implements Serializable{
     // class instance variables
     private int waterNumber;
     private int landNumber;
-    private Location[] [] locations;
+    private int noOfRows;
+    private int noOfColumns;
+    private Location[][] locations;
     
     
     public Map() {
@@ -94,6 +96,10 @@ public class Map implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
     }
 
     
