@@ -58,8 +58,8 @@ public class InventoryControl {
         }
         int i=0;
         int sum = 0;
-        for (i = 0; i < totalWeight.length; i++) {
-            sum += totalWeight[i];
+        for (double tw: totalWeight) {
+            sum += tw;
 
         }
         System.out.println("The total weight for your supplies are " + sum);
