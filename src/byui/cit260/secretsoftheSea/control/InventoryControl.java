@@ -50,10 +50,7 @@ public class InventoryControl {
         }
         if (totalWeight[i] > 10000) {
             return -1;
-        }
 
-        if (totalWeight[i] < 200) {
-            return -1;
         }
         }
         int i=0;

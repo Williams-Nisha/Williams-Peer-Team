@@ -6,6 +6,7 @@
 package byui.cit260.secretsoftheSea.view;
 
 import byui.cit260.secretsoftheSea.control.InventoryControl;
+import byui.cit260.secretsoftheSea.control.RandomControl;
 import java.util.Scanner;
 
 /**
@@ -22,6 +23,7 @@ public class ViewListInventoryView extends View {
             + "\nW - Water - each unit is 50 lbs"
             + "\nG - Fuel - each unit is 40 lbs"
             + "\nM - Munitions - each unit is 20 lbs"
+            + "\nT - Total inventory weight"
             + "\nQ - Quit "
             + "\n----------------------------------");
     }
@@ -50,6 +52,14 @@ public class ViewListInventoryView extends View {
                 System.out.println("\n*** Please enter how many units from 0-99 you would like.: ***");
                 getInput2("munitions", 20);
                 break;
+            case 'T': // display total inventory weight
+                InventoryControl tw = new InventoryControl();
+                double [] totalWeight = new double [4];
+                totalWeight [0] = 400;
+                totalWeight [1] = 250;
+                totalWeight [2] = 160;
+                totalWeight [3] = 120;
+                tw.calTotalWeightOfItem(totalWeight);
 
             case 'Q': // quit program
                 return true;

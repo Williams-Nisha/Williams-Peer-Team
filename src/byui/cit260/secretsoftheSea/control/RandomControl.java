@@ -13,12 +13,20 @@ public class RandomControl {
 
     public int calCoins(int [] coins){ 
         
+        for (int i = 0; i < coins.length; i++) {
+        if (coins[i] < 0) {
+            return -1;
+        }
+        if (coins[i] > 75) {
+            return -1;
+        }
+        }
         int sum = 0;
         for (int cs: coins) {
             sum += cs;
 
         }
-        System.out.println("The total coins equals" + sum);
+        System.out.println("The total coins equals " + sum);
         return sum;
     
     }

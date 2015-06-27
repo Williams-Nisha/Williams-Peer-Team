@@ -5,6 +5,7 @@
  */
 package byui.cit260.secretsoftheSea.view;
 
+import byui.cit260.secretsoftheSea.control.RandomControl;
 import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Map;
 import secretsofthesea.SecretsoftheSea;
@@ -26,6 +27,7 @@ public class GameMenuView extends View {
                 + "\nV - View Map"
                 + "\nC - View Crew"
                 + "\nX - Exchange resources"
+                + "\nT - Total Coins"
                 + "\nW-  Work on ship"
                 + "\nL - Launch the ship"
                 + "\nD - Dock the ship"
@@ -57,6 +59,9 @@ public class GameMenuView extends View {
                 return true;
             case 'X'://display exchange resources menu
                 this.exchangeResources();
+                break;
+            case 'T'://display total coins
+                this.totalCoins();
                 break;
             case 'V'://view map
                 this.displayMap();
@@ -148,6 +153,16 @@ public class GameMenuView extends View {
 
     private void viewCrew() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void totalCoins() {
+        RandomControl rc = new RandomControl();
+        int [] coins = new int [3];
+        coins [0] = 35;
+        coins [1] = 21;
+        coins [2] = 4;
+        rc.calCoins(coins);
+        
     }
     }
 
