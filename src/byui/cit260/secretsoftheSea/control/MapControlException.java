@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260secretsoftheSea.view;
+package byui.cit260.secretsoftheSea.control;
 
 /**
  *
  * @author Lorien
  */
-class GameMenuView {
-
-    void displayMenu() {
-        System.out.println("\n*** displayMenu stub function called ***");
-    }
+public class MapControlException extends Exception {
     
 }

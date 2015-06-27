@@ -6,6 +6,7 @@
 package byui.cit260.secretsoftheSea.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +19,10 @@ public class Location implements Serializable{
     private double amountRemaining;
     private boolean water;
     private boolean land;
+    private int row;
+    private int column;
+    private Scene scene;
+    private ArrayList<Crew> crew;
 
     public Location() {
     }
@@ -92,6 +97,21 @@ public class Location implements Serializable{
         }
         return true;
     }
- 
     
+     public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+    
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

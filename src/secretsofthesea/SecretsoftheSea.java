@@ -16,7 +16,7 @@ import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.InventoryList;
 import byui.cit260.secretsoftheSea.model.Item;
 import byui.cit260.secretsoftheSea.model.WaterScene;
-import citbyui.cit260secretsoftheSea.view.StartProgramView;
+import byui.cit260.secretsoftheSea.view.StartProgramView;
 
 /**
  *

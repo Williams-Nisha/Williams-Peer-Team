@@ -17,6 +17,9 @@ public class InventoryList implements Serializable {
     private String inventoryType;
     private int quantityInStock;  
     private double requiredAmount;  
+    private String description;
+    private int NumberOfItems;
+    private boolean Symbol;
 
     public InventoryList() {
     }
@@ -80,16 +83,16 @@ public class InventoryList implements Serializable {
         return true;
     }
 
-    public void setDescription(String china) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setNumberOfItems(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setNumberOfItems(int NumberOfItems) {
+        this.NumberOfItems = NumberOfItems;
     }
 
-    public void setSymbol(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setSymbol(boolean Symbol) {
+        this.Symbol = Symbol;
     }
-
+    
 }

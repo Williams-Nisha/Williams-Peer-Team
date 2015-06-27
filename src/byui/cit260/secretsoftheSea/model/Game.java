@@ -15,6 +15,10 @@ public class Game implements Serializable{
     
     // class instance variables
     private double totalTime;
+    private Ship ship;
+    private InventoryList[] inventory;
+    private Player player;
+    private Map map;
 
     public Game() {
     }
@@ -26,6 +30,38 @@ public class Game implements Serializable{
 
     public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
+
+    public InventoryList[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryList[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     @Override
@@ -53,6 +89,10 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public Map getGameMap() {
+        return map;
     }
     
     

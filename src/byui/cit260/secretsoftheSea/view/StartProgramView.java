@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260secretsoftheSea.view;
+package byui.cit260.secretsoftheSea.view;
 
 import byui.cit260.secretsoftheSea.control.ProgramControl;
 import byui.cit260.secretsoftheSea.model.Player;
@@ -33,7 +33,7 @@ public class StartProgramView {
             
             //DISPLAY the main menu
                MainMenuView mainMenu = new MainMenuView();
-               mainMenu.displayMenu();
+               mainMenu.display();
 
 }
 

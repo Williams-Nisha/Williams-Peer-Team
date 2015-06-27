@@ -18,9 +18,10 @@ public class Ship implements Serializable {
     private String type;
 
     public Ship() {
+        this.description = "\nThis is the description of your ship.";
+        this.type = "\nThis is your type of ship";
     }
 
-    
     public String getDescription() {
         return description;
     }

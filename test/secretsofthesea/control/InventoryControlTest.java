@@ -5,6 +5,7 @@
  */
 package secretsofthesea.control;
 
+import byui.cit260.secretsoftheSea.control.InventoryControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

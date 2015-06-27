@@ -11,21 +11,23 @@ package byui.cit260.secretsoftheSea.control;
  */
 public class RandomControl {
 
-    public int calCoins(int gold, int silver, int copper){
+    public int calCoins(int [] coins){ 
+        
+        for (int i = 0; i < coins.length; i++) {
+        if (coins[i] < 0) {
+            return -1;
+        }
+        if (coins[i] > 75) {
+            return -1;
+        }
+        }
+        int sum = 0;
+        for (int cs: coins) {
+            sum += cs;
 
-	if (gold < 0) {
-		return -1;
-        }    
-        if (silver < 0) {
-		return -1;
-        }    
-        if (copper < 0) {
-		return -1;
-        }    
-
-	int total = gold + silver + copper;
-
-	return total;
+        }
+        System.out.println("The total coins equals " + sum);
+        return sum;
     
     }
     

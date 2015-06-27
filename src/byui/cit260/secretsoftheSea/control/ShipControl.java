@@ -33,7 +33,11 @@ public class ShipControl {
 }
 
     public ShipControl() {
+        
     }
-    
+    public boolean checkLaunch(){
+        System.out.println("Check launch status.");
+        return false;
+    }
     
 }

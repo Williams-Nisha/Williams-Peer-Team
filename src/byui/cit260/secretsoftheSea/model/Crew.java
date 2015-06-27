@@ -12,76 +12,35 @@ import java.util.Objects;
  *
  * @author Lorien
  */
-public class Crew implements Serializable{
+public enum Crew implements Serializable{
+
+    Skivvie_Jones("Even though he's been down to his skivvies a few times, he always find a way out.","Pirate"),
+    One_eyed_Oscar("Don't let his one eye fool you; he's watching everything.","Pirate"),
+    Timmy_Longthumbs("An unscruptulous character, but great at nabbing things in a pinch.","Captain"),
+    Jack_Shortbeard("What he lacks in height he makes up with ambition.","Pirate"),
+    Mulligan_Morgan("She's had a few close calls, but always ends up on top.","Pirate"),
+    Freebird_Freida("She has a wild spirit, but is loyal.","Pirate");
+    
     
     // class instance variables
-    private String name;
-    private String description;
-    private String type;
+    private final String description;
+    private final String type;
 
-    public Crew() {
-    }
-    
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    Crew(String description, String type) {
+        this.description = description;
+        this.type = type;
+}
 
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     public String toString() {
-        return "Crew{" + "name=" + name + ", description=" + description + ", type=" + type + '}';
+        return "Crew{ description= " + description + ", type=" + type + '}';
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + Objects.hashCode(this.name);
-        hash = 17 * hash + Objects.hashCode(this.description);
-        hash = 17 * hash + Objects.hashCode(this.type);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Crew other = (Crew) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
 }
