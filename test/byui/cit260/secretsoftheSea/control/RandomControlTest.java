@@ -20,7 +20,7 @@ public class RandomControlTest {
     /**
      * Test of calCoins method, of class RandomControl.
      */
-    @Test
+    /*@Test
     public void testCalCoins() {
         System.out.println("calCoins");
         
@@ -77,5 +77,6 @@ public class RandomControlTest {
         result = instance.calCoins(gold, silver, copper);
         assertEquals(expResult, result);
     }
-    
+    */
 }
+    
