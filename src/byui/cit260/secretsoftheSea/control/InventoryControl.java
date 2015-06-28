@@ -37,7 +37,7 @@ public class InventoryControl {
         }
 
         double totalWeight = (weight * amount);
-        System.out.println("You have added" + amount + "units of " + name + "for a total weight of " + totalWeight);
+        System.out.println("You have added" + amount + " units of " + name + " for a total weight of " + totalWeight);
         return totalWeight;
 
     }
@@ -59,7 +59,17 @@ public class InventoryControl {
             sum += tw;
 
         }
-        System.out.println("The total weight for your supplies are " + sum);
+        System.out.println(
+                "******************************\n"
+                + "This test includes the following example array..\n"
+                + "double [] totalWeight = new double [4];\n"
+                + "totalWeight [0] = 400;\n"
+                + "totalWeight [1] = 250;\n"
+                + "totalWeight [2] = 160;\n"
+                + "totalWeight [3] = 120;\n"
+                + "When the array is inputted into the function, "
+                + "the total weight for your supplies are " + sum + " lbs\n" +
+                 "******************************\n");
         return sum;
     }
 }
