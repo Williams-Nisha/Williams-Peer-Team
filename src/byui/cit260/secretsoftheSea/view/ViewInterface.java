@@ -2,7 +2,7 @@ package byui.cit260.secretsoftheSea.view;
 
 
 import java.util.Scanner;
-
+import byui.cit260.secretsoftheSea.exceptions.MapControlException;
 
 /**
  *
@@ -15,5 +15,6 @@ import java.util.Scanner;
         public String getInput();
 
         public boolean doAction(Object obj);
+        
     }
 

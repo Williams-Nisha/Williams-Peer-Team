@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.secretsoftheSea.control;
+import byui.cit260.secretsoftheSea.exceptions.MapControlException;
 
 /**
  *
@@ -24,16 +25,17 @@ package byui.cit260.secretsoftheSea.control;
  */
 public class InventoryControl {
 
-    public double calWeightOfItems(String name, double weight, double amount) {
+    public double calWeightOfItems(String name, double weight, double amount) 
+    throws MapControlException {
 
         if (amount < 0) {
-            return -1;
+            throw new MapControlException("You must have at least 1 or more units of this item.");
         }
         if (amount > 99) {
-            return -1;
+            throw new MapControlException("You cannot have more than 99 units of this item.");
         }
         if (weight < 0) {
-            return -1;
+            throw new MapControlException("Item must weigh more than 1 pound.");
         }
 
         double totalWeight = (weight * amount);
@@ -43,13 +45,14 @@ public class InventoryControl {
     }
 //fuel, water, food, munition
 
-    public double calTotalWeightOfItem(double[] totalWeight) {
+    public double calTotalWeightOfItem(double[] totalWeight)
+    throws MapControlException {
         for (int i = 0; i < totalWeight.length; i++) {
         if (totalWeight[i] < 0) {
-            return -1;
+            throw new MapControlException("Total weight cannot be negative.");
         }
         if (totalWeight[i] > 10000) {
-            return -1;
+            throw new MapControlException("Total weight cannot be over 10,000 pounds.");
 
         }
         }

@@ -6,7 +6,7 @@
 package byui.cit260.secretsoftheSea.view;
 
 import byui.cit260.secretsoftheSea.control.GameControl;
-import byui.cit260.secretsoftheSea.control.MapControlException;
+import byui.cit260.secretsoftheSea.exceptions.MapControlException;
 import java.util.Scanner;
 import secretsofthesea.SecretsoftheSea;
 
