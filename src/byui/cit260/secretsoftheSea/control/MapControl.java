@@ -12,33 +12,33 @@ import java.awt.image.BufferedImage;
 import byui.cit260.secretsoftheSea.model.Scene;
 import javax.swing.ImageIcon;
 import secretsofthesea.SecretsoftheSea;
-
+import byui.cit260.secretsoftheSea.exceptions.MapControlException;
 /**
  *
  * @author Lorien
  */
 public class MapControl {
-    
+
     public static Map createMap() {
-       // create the map
+        // create the map
         Map map = new Map(20, 20);
-        
+
         // create a list of the different scenes in the game
         Scene[] scenes = createScenes();
-        
+
         // assign the different scenes to locaitons in the map
         GameControl.assignScenesToLocations(map, scenes);
-        
+
         return map;
     }
-    
+
     private static Scene[] createScenes() {
         BufferedImage image = null;
-        
+
         Game game = SecretsoftheSea.getCurrentGame();
-        
+
         Scene[] scenes = new Scene[SceneType.values().length];
-        
+
         Scene startingScene = new Scene();
         startingScene.setDescription(
                 "\n Welcome to the wild and precarious sea.");
@@ -49,7 +49,7 @@ public class MapControl {
         //        "/citbyui/cit260/secretsofthesea/images/startingpoint.jpg");
         // startingScene.setIcon(startingSceneImage);
         scenes[SceneType.start.ordinal()] = startingScene;
-        
+
         Scene finishScene = new Scene();
         finishScene.setDescription(
                 "\nCongratulations! Well done.");
@@ -59,7 +59,7 @@ public class MapControl {
         // ImageIcon finishSceneImage = MapControl.getImage(finishScene,
         //        "/citbyui/cit260/secretsofthesea/images/finish.jpg");
         //    finishScene.setIcon(finishSceneImage);
-        scenes[SceneType.finish.ordinal()] = finishScene;   
+        scenes[SceneType.finish.ordinal()] = finishScene;
         return scenes;
     }
 
@@ -72,16 +72,17 @@ public class MapControl {
     }
 
     public enum SceneType {
-        start, 
-        water, 
-        docked, 
-        air, 
+
+        start,
+        water,
+        docked,
+        air,
         finish;
     }
-    
+
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
-        
+
         // start point
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.water.ordinal()]);
@@ -89,26 +90,23 @@ public class MapControl {
         locations[0][3].setScene(scenes[SceneType.air.ordinal()]);
         locations[0][3].setScene(scenes[SceneType.finish.ordinal()]);
     }
-    
-    public boolean intTrade(String[] name, double[] weight) {
 
-        if (weight[0] < 0) {
-            System.out.println("Sorry, you do not have enough" + name[0] + " to trade");
-            return false;
+    public boolean intTrade(String[] name, double[] weight) 
+                    throws MapControlException {
+            if (weight[0] < 0) {
+                throw new MapControlException("Sorry, you do not have enough" + name[0] + " to trade");
+            }
+            if (weight[1] < 25) {
+
+                throw new MapControlException("Sorry, you do not have enough" + name[1] + " to trade");
+            }
+            if (weight[2] < 10) {
+                throw new MapControlException("Sorry, you do not have enough" + name[2] + " to trade");
+            }
+            if (weight[3] < 30) {
+                throw new MapControlException("Sorry, you do not have enough" + name[3] + " to trade");
+            }
+            System.out.println("What would you like to trade?");
+            return true;
         }
-        if (weight[1] < 25) {
-            System.out.println("Sorry, you do not have enough" + name[1] + " to trade");
-            return false;
-        }
-        if (weight[2] < 10) {
-            System.out.println("Sorry, you do not have enough" + name[2] + " to trade");
-            return false;
-        }
-        if (weight[3] < 30) {
-            System.out.println("Sorry, you do not have enough" + name[3] + " to trade");
-            return false;
-        }
-        System.out.println("What would you like to trade?");
-        return true;
     }
-}

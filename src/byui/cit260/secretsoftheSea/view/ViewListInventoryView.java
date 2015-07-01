@@ -8,6 +8,7 @@ package byui.cit260.secretsoftheSea.view;
 import byui.cit260.secretsoftheSea.control.InventoryControl;
 import byui.cit260.secretsoftheSea.control.RandomControl;
 import java.util.Scanner;
+import byui.cit260.secretsoftheSea.exceptions.MapControlException;
 
 /**
  *
@@ -17,24 +18,24 @@ public class ViewListInventoryView extends View {
 
     public ViewListInventoryView() {
         super("\n----------------------------------"
-            + "\n|Inventory Items  - Supplies      |"
-            + "\n----------------------------------"
-            + "\nF - Food - each unit is 100 lbs"
-            + "\nW - Water - each unit is 50 lbs"
-            + "\nG - Fuel - each unit is 40 lbs"
-            + "\nM - Munitions - each unit is 20 lbs"
-            + "\nT - Total inventory weight"
-            + "\nQ - Quit "
-            + "\n----------------------------------");
+                + "\n|Inventory Items  - Supplies      |"
+                + "\n----------------------------------"
+                + "\nF - Food - each unit is 100 lbs"
+                + "\nW - Water - each unit is 50 lbs"
+                + "\nG - Fuel - each unit is 40 lbs"
+                + "\nM - Munitions - each unit is 20 lbs"
+                + "\nT - Total inventory weight"
+                + "\nQ - Quit "
+                + "\n----------------------------------");
     }
-     @Override
-    public boolean doAction(Object obj) {
+
+    @Override
+    public boolean doAction(Object obj){
         
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
         char choice = value.charAt(0);
-        
-
+        try {
         switch (choice) {
             case 'F':
                 System.out.println("\n*** Please enter how many units from 0-99 you would like.: ***");
@@ -54,11 +55,11 @@ public class ViewListInventoryView extends View {
                 break;
             case 'T': // display total inventory weight
                 InventoryControl tw = new InventoryControl();
-                double [] totalWeight = new double [4];
-                totalWeight [0] = 400;
-                totalWeight [1] = 250;
-                totalWeight [2] = 160;
-                totalWeight [3] = 120;
+                double[] totalWeight = new double[4];
+                totalWeight[0] = 400;
+                totalWeight[1] = 250;
+                totalWeight[2] = 160;
+                totalWeight[3] = 120;
                 tw.calTotalWeightOfItem(totalWeight);
 
             case 'Q': // quit program
@@ -67,10 +68,16 @@ public class ViewListInventoryView extends View {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-            return false;
+        }catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }
+        return false;
     }
+    
+   
 
-    private void getInput2(String name, double weight) {
+    private void getInput2(String name, double weight)
+            throws MapControlException {
         Scanner keyboard = new Scanner(System.in);
         double amount = keyboard.nextDouble();
         InventoryControl ins = new InventoryControl();
