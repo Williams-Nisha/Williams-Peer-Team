@@ -5,31 +5,34 @@
  */
 package byui.cit260.secretsoftheSea.control;
 
+import byui.cit260.secretsoftheSea.exceptions.ShipControlException;
+
 /**
  *
  * @author Lorien
  */
 public class ShipControl {
+
     
-    public double calStorage(double height, double width, double length){
+    public double calStorage(double height, double width, double length) throws ShipControlException{
 
 	if (length < 5 || length > 45) {
-		return -1;
+		throw new ShipControlException("Cannot have a negative length.");
         }
         
 	if (width < 5 || width > 20) {
-		return -1;
+		throw new ShipControlException("Cannot have a negative width.");
         }
 
 	if (height < 2 || height > 10) {
-		return -1;
+		throw new ShipControlException("Cannot have a negative height.");
         }
 
 	double area = length * width * height;
 
 	return area;
 
-        
+
 }
 
     public ShipControl() {
