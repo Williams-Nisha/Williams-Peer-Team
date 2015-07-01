@@ -91,22 +91,21 @@ public class MapControl {
         locations[0][3].setScene(scenes[SceneType.finish.ordinal()]);
     }
 
-    public boolean intTrade(String[] name, double[] weight) 
+    public boolean intTrade(String name, double weight) 
                     throws MapControlException {
-            if (weight[0] < 0) {
-                throw new MapControlException("Sorry, you do not have enough" + name[0] + " to trade");
+            if (weight < 0) {
+                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
             }
-            if (weight[1] < 25) {
+            if (weight < 25) {
 
-                throw new MapControlException("Sorry, you do not have enough" + name[1] + " to trade");
+                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
             }
-            if (weight[2] < 10) {
-                throw new MapControlException("Sorry, you do not have enough" + name[2] + " to trade");
+            if (weight < 10) {
+                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
             }
-            if (weight[3] < 30) {
-                throw new MapControlException("Sorry, you do not have enough" + name[3] + " to trade");
+            if (weight < 30) {
+                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
             }
-            System.out.println("What would you like to trade?");
             return true;
         }
     }
