@@ -89,9 +89,11 @@ public class ShipStatusView {
 
     private void storage() {
         int i = 0;
-        if (i < 1) {
-            System.out.println("You do not have anything stored in your ship.");
-        } else if (i >= 9) {
+        if (i < 0) {
+            System.out.println("There is an error.");
+        } else if (i == 0 || i == 1) {
+            System.out.println("You do not have enough items in your storage");
+        }else if (i >= 9) {
             System.out.println("You have" + i + " items stored in your ship");
         } else if (i == 10) {
             System.out.println("You have reach the maximum amount of storage allowed on your ship.");
@@ -133,4 +135,3 @@ public class ShipStatusView {
         }
     }
 }
-

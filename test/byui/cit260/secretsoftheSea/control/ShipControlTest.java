@@ -5,6 +5,7 @@
  */
 package byui.cit260.secretsoftheSea.control;
 
+import byui.cit260.secretsoftheSea.exceptions.ShipControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -22,7 +23,7 @@ public class ShipControlTest {
      * Test of calStorage method, of class ShipControl.
      */
     @Test
-    public void testCalStorage() {
+    public void testCalStorage() throws ShipControlException {
          
         System.out.println("calStorage");
         
