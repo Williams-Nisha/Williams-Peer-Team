@@ -13,6 +13,7 @@ import byui.cit260.secretsoftheSea.model.Scene;
 import javax.swing.ImageIcon;
 import secretsofthesea.SecretsoftheSea;
 import byui.cit260.secretsoftheSea.exceptions.MapControlException;
+
 /**
  *
  * @author Lorien
@@ -91,21 +92,15 @@ public class MapControl {
         locations[0][3].setScene(scenes[SceneType.finish.ordinal()]);
     }
 
-    public boolean intTrade(String name, double weight) 
-                    throws MapControlException {
-            if (weight < 0) {
-                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
-            }
-            if (weight < 25) {
-
-                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
-            }
-            if (weight < 10) {
-                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
-            }
-            if (weight < 30) {
-                throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
-            }
-            return true;
+    public boolean intTrade(String name, double weight)
+            throws MapControlException {
+        if (weight < 0) {
+            throw new MapControlException("Please enter a valid weight.");
         }
+        if (weight < 30) {
+            throw new MapControlException("Sorry, you do not have enough" + name + " to trade");
+        }
+
+        return true;
     }
+}

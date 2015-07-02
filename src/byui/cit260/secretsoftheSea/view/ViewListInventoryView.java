@@ -8,7 +8,7 @@ package byui.cit260.secretsoftheSea.view;
 import byui.cit260.secretsoftheSea.control.InventoryControl;
 import byui.cit260.secretsoftheSea.control.RandomControl;
 import java.util.Scanner;
-import byui.cit260.secretsoftheSea.exceptions.MapControlException;
+import byui.cit260.secretsoftheSea.exceptions.InventoryControlException;
 
 /**
  *
@@ -69,14 +69,14 @@ public class ViewListInventoryView extends View {
                     System.out.println("\n*** Invalid selection *** Try again");
                     break;
             }
-        } catch (MapControlException me) {
+        } catch (InventoryControlException me) {
             System.out.println(me.getMessage());
         }
         return false;
     }
 
     private void getInput2(String name, double weight)
-            throws MapControlException {
+            throws InventoryControlException {
         try {
             Scanner keyboard = new Scanner(System.in);
             double amount = Double.parseDouble(keyboard.next());

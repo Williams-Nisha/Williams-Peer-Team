@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
  *
  * @author Nisha
  */
+/*
 public class MapControlTest {
 
     public MapControlTest() {
@@ -20,6 +21,7 @@ public class MapControlTest {
     /**
      * Test of intTrade method, of class MapControl.
      */
+    /*
     @Test
     public void testIntTrade() {
         System.out.println("intTrade");
@@ -72,3 +74,4 @@ public class MapControlTest {
     }
 
 }
+*/
