@@ -9,6 +9,9 @@ import byui.cit260.secretsoftheSea.control.RandomControl;
 import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Map;
 import secretsofthesea.SecretsoftheSea;
+import byui.cit260.secretsoftheSea.exceptions.RandomControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -60,8 +63,14 @@ public class GameMenuView extends View {
             case 'X'://display exchange resources menu
                 this.exchangeResources();
                 break;
-            case 'T'://display total coins
+            case 'T':{
+            try {
+                //display total coins
                 this.totalCoins();
+            } catch (RandomControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'V'://view map
                 this.displayMap();
@@ -155,7 +164,7 @@ public class GameMenuView extends View {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void totalCoins() {
+    private void totalCoins() throws RandomControlException {
         RandomControl rc = new RandomControl();
         int [] coins = new int [3];
         coins [0] = 35;
@@ -164,5 +173,4 @@ public class GameMenuView extends View {
         rc.calCoins(coins);
         
     }
-    }
-
+}

@@ -12,21 +12,22 @@ import byui.cit260.secretsoftheSea.exceptions.RandomControlException;
  */
 public class RandomControl {
 
-    public int calCoins(int[] coins) throws RandonControlException {
+    public int calCoins(int[] coins) throws RandomControlException {
 
         for (int i = 0; i < coins.length; i++) {
             if (coins[i] < 0) {
-                throw new RandonControlException("Coins cannot be negative.");
+                throw new RandomControlException("Coins cannot be negative.");
             }
             if (coins[i] > 75) {
-                throw new RandonControlException("Coins cannot be greater than 75.");
+                throw new RandomControlException("Coins cannot be greater than 75.");
             }
+        }
             int sum = 0;
             for (int cs : coins) {
                 sum += cs;
-
             }
+        
             System.out.println("The total coins equals " + sum);
             return sum;
-
-        }
+        } 
+    }
