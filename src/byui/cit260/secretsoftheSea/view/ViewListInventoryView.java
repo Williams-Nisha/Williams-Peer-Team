@@ -5,12 +5,18 @@
  */
 package byui.cit260.secretsoftheSea.view;
 
+import byui.cit260.secretsoftheSea.control.GameControl;
 import byui.cit260.secretsoftheSea.control.InventoryControl;
 import byui.cit260.secretsoftheSea.control.RandomControl;
 import java.util.Scanner;
 import byui.cit260.secretsoftheSea.exceptions.InventoryControlException;
+import byui.cit260.secretsoftheSea.model.InventoryList;
+import byui.cit260.secretsoftheSea.model.Item;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import secretsofthesea.SecretsoftheSea;
@@ -22,7 +28,7 @@ import secretsofthesea.SecretsoftheSea;
 public class ViewListInventoryView extends View {
 
     protected final BufferedReader keyboard = SecretsoftheSea.getInFile();
-    
+
     public ViewListInventoryView() {
         super("\n----------------------------------"
                 + "\n|Inventory Items  - Supplies      |"
@@ -32,6 +38,7 @@ public class ViewListInventoryView extends View {
                 + "\nG - Fuel - each unit is 40 lbs"
                 + "\nM - Munitions - each unit is 20 lbs"
                 + "\nT - Total inventory weight"
+                + "\nP - Print Inventory Items"
                 + "\nQ - Quit "
                 + "\n----------------------------------");
     }
@@ -42,24 +49,32 @@ public class ViewListInventoryView extends View {
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
         char choice = value.charAt(0);
-        
+        double w;
         try {
             switch (choice) {
                 case 'F':
+                    InventoryList food = GameControl.getGame().getInventory()[Item.Food.ordinal()];
                     this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
-                    getInput2("food", 100);
+                    w = getInput2("food", 100);
+                    food.setWeight(w);
                     break;
                 case 'W':
+                    InventoryList water = GameControl.getGame().getInventory()[Item.Water.ordinal()];
                     this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
-                    getInput2("water", 50);
+                    w = getInput2("water", 50);
+                    water.setWeight(w);
                     break;
                 case 'G':
+                    InventoryList fuel = GameControl.getGame().getInventory()[Item.Fuel.ordinal()];
                     this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
-                    getInput2("fuel", 40);
+                    w = getInput2("fuel", 40);
+                    fuel.setWeight(w);
                     break;
                 case 'M': // create and start a new game
+                    InventoryList munitions = GameControl.getGame().getInventory()[Item.Munitions.ordinal()];
                     this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
-                    getInput2("munitions", 20);
+                    w = getInput2("munitions", 20);
+                    munitions.setWeight(w);
                     break;
                 case 'T': // display total inventory weight
                     InventoryControl tw = new InventoryControl();
@@ -69,7 +84,9 @@ public class ViewListInventoryView extends View {
                     totalWeight[2] = 160;
                     totalWeight[3] = 120;
                     tw.calTotalWeightOfItem(totalWeight);
-
+                case 'P': //printing inventory items
+                    printInventoryItems(GameControl.getGame().getInventory(),"inventoryReport.txt");
+                    break;
                 case 'Q': // quit program
                     return true;
                 default:
@@ -85,17 +102,31 @@ public class ViewListInventoryView extends View {
         return false;
     }
 
-    private void getInput2(String name, double weight)
+    private double getInput2(String name, double weight)
             throws InventoryControlException, IOException {
         try {
-            
+
             double amount = Double.parseDouble(this.keyboard.readLine());
             InventoryControl ins = new InventoryControl();
             double w = ins.calWeightOfItems(name, weight, amount);
+            return w;
         } catch (NumberFormatException nf) {
             ErrorView.display(this.getClass().getName(),
-                    "\nYou must enter a valid number." + 
-                    " Try again or enter Q to quit." + nf.getMessage());
+                    "\nYou must enter a valid number."
+                    + " Try again or enter Q to quit." + nf.getMessage());
         }
+        return -1;
+    }
+
+    private void printInventoryItems(InventoryList[] inventoryItems, String outputLocation) throws FileNotFoundException {
+        //create BufferedREader object for input file
+        try (PrintWriter out = new PrintWriter(new File(outputLocation))){
+           out.println(); //print title and column headings
+           out.printf(outputLocation, inventoryItems);
+           out.printf(outputLocation, inventoryItems);
+        } finally{
+
+        }
+                
     }
 }

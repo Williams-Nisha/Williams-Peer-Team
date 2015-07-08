@@ -20,7 +20,15 @@ public class InventoryList implements Serializable {
     private String description;
     private int NumberOfItems;
     private boolean Symbol;
+    private double weight;
 
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
     public InventoryList() {
     }
 

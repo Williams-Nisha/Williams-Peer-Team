@@ -19,10 +19,10 @@ import secretsofthesea.SecretsoftheSea;
  * @author Lorien
  */
 public class GameControl {
-
+    private static Game game;
     public static void createNewGame(Player player) {
 
-        Game game = new Game(); // create new game
+        game = new Game(); // create new game
         SecretsoftheSea.setCurrentGame(game); // save in SecretsoftheSea
 
         game.setPlayer(player); // save player in game
@@ -39,8 +39,15 @@ public class GameControl {
 
         // move crew to starting postition in the map
         MapControl.moveCrewToStartingLocation(map);
-    
+        
     }    
+        public static Game getGame() {
+            return game;
+        }
+        
+        public static void setGame(Game game){
+            game = game;
+        }
 
     public static InventoryList[] createInventoryList() {
 
