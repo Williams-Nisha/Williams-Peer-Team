@@ -24,7 +24,7 @@ public class MapControlTest {
     /*
     @Test
     public void testIntTrade() {
-        System.out.println("intTrade");
+        this.console.println("intTrade");
         String[] name = {"water", "food", "munition", "fuel"};
         double[] weight = {400, 1200, 800, 300};
         MapControl instance = new MapControl();
@@ -32,40 +32,40 @@ public class MapControlTest {
         boolean result = instance.intTrade(name, weight);
         assertEquals(expResult, result);
         //Test 2
-        System.out.println("intTrade");
+        this.console.println("intTrade");
         weight[0] = -1;
         expResult = false;
         result = instance.intTrade(name, weight);
         assertEquals(expResult, result);
         //Test 3
-        System.out.println("intTrade");
+        this.console.println("intTrade");
         weight[0] = 400;
         weight[1] = 24;
         expResult = false;
         result = instance.intTrade(name, weight);
         assertEquals(expResult, result);
         //Test 4
-        System.out.println("intTrade");
+        this.console.println("intTrade");
         weight[1] = 1200;
         weight[2] = 9;
         expResult = false;
         result = instance.intTrade(name, weight);
         assertEquals(expResult, result);
         //Test 5
-        System.out.println("intTrade");
+        this.console.println("intTrade");
         weight[2] = 800;
         weight[3] = 15;
         expResult = false;
         result = instance.intTrade(name, weight);
         assertEquals(expResult, result);
         //Test 6 Boundaries
-        System.out.println("intTrade");
+        this.console.println("intTrade");
         weight[3] = 30;
         expResult = true;
         result = instance.intTrade(name, weight);
         assertEquals(expResult, result);
         //Test 7 Boundaries
-        System.out.println("intTrade");
+        this.console.println("intTrade");
         weight[3] = 30;
         weight[0]= 10;
         expResult = true;

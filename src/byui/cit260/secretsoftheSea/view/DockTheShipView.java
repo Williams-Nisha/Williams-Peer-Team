@@ -40,27 +40,27 @@ public class DockTheShipView extends View {
         } else if (choice == 'L') {
             this.moveLeft();
         } else if (choice == 'R') {
-            System.out.println(this.moveRight());
+            this.console.println(this.moveRight());
         } else if (choice == 'K') {
             this.dockShip();
         } else if (choice == 'E') {
             return true;
         } else {
-            System.out.println("\n*** Invalid selection *** Try again");
+            this.console.println("\n*** Invalid selection *** Try again");
         }
         return false;
     }
 
     private void moveUp() {
-        System.out.println("*** moveUp function called ***");
+        this.console.println("*** moveUp function called ***");
     }
 
     private void moveDown() {
-        System.out.println("*** moveDown function called ***");
+        this.console.println("*** moveDown function called ***");
     }
 
     private void moveLeft() {
-        System.out.println("*** moveLeft function called ***");
+        this.console.println("*** moveLeft function called ***");
     }
 
     private String moveRight() {
@@ -68,6 +68,6 @@ public class DockTheShipView extends View {
     }
 
     private void dockShip() {
-        System.out.println("*** dockShip function called ***");
+        this.console.println("*** dockShip function called ***");
     }
 }

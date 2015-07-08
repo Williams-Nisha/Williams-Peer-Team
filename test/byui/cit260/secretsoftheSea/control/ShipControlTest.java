@@ -25,13 +25,13 @@ public class ShipControlTest {
     @Test
     public void testCalStorage() throws ShipControlException {
          
-        System.out.println("calStorage");
+        this.console.println("calStorage");
         
           /**********************
          * * Test case #1
          * *******************/
         
-         System.out.println("\tTest case #1");
+         this.console.println("\tTest case #1");
         
         // input values for test case 1
         double height = 8.0;
@@ -54,7 +54,7 @@ public class ShipControlTest {
          * * Test case #2
          * *******************/
          
-        System.out.println("\tTest case #2");
+        this.console.println("\tTest case #2");
         
         // input values for test case 2
         height = 5.0;
@@ -74,7 +74,7 @@ public class ShipControlTest {
          * * Test case #3
          * *******************/
          
-        System.out.println("\tTest case #3");
+        this.console.println("\tTest case #3");
         
         // input values for test case 3
         height = 3.0;
@@ -93,7 +93,7 @@ public class ShipControlTest {
          * * Test case #4
          * *******************/
          
-        System.out.println("\tTest case #4");
+        this.console.println("\tTest case #4");
         
         // input values for test case 4
         height = 4.0;
@@ -112,7 +112,7 @@ public class ShipControlTest {
          * * Test case #5
          * *******************/
          
-        System.out.println("\tTest case #5");
+        this.console.println("\tTest case #5");
         
         // input values for test case 5
         height = 7.0;
@@ -131,7 +131,7 @@ public class ShipControlTest {
          * * Test case #6
          * *******************/
          
-        System.out.println("\tTest case #6");
+        this.console.println("\tTest case #6");
         
         // input values for test case 6
         height = 2.0;
@@ -151,7 +151,7 @@ public class ShipControlTest {
          * * Test case #7
          * *******************/
          
-       System.out.println("\tTest case #7");
+       this.console.println("\tTest case #7");
         
         // input values for test case 7
         height = 10.0;

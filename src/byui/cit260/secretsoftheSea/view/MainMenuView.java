@@ -51,7 +51,7 @@ public class MainMenuView extends View {
             case 'E': // exit the program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -67,7 +67,7 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
 
     private void displayHelpMenu() {
@@ -76,7 +76,7 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
     }
     

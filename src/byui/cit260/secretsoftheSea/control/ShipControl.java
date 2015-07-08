@@ -38,7 +38,7 @@ public class ShipControl {
     }
 
     public boolean checkLaunch() {
-        System.out.println("Check launch status.");
+        this.console.println("Check launch status.");
         return false;
     }
 

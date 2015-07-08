@@ -53,7 +53,7 @@ public class Scene implements Serializable {
     }
 
     public void setIcon(ImageIcon startingSceneImage) {
-        System.out.println();
+        this.console.println();
     }
     
     

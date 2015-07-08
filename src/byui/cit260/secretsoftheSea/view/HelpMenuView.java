@@ -40,36 +40,36 @@ public class HelpMenuView extends View {
 
         switch (choice) {
             case 'G': // goal of the game
-                System.out.println("\n*** G ***");
+                this.console.println("\n*** G ***");
                 break;
             case 'M': // how to move
-                System.out.println("\n*** M ***");
+                this.console.println("\n*** M ***");
                 break;
             case 'E': // explore location
-                System.out.println("\n*** E ***");
+                this.console.println("\n*** E ***");
                 break;
             case 'I': //view inventory
-                System.out.println("\n*** I ***");
+                this.console.println("\n*** I ***");
                 break;
             case 'S': // ship's status
-                System.out.println("\n*** S ***");
+                this.console.println("\n*** S ***");
                 break;
             case 'X': // exchange resources
-                System.out.println("\n*** X ***");
+                this.console.println("\n*** X ***");
                 break;
             case 'W': // work on ship
-                System.out.println("\n*** W ***");
+                this.console.println("\n*** W ***");
                 break;
             case 'L': // launch ship
-                System.out.println("\n*** L ***");
+                this.console.println("\n*** L ***");
                 break;
             case 'd': // dock ship
-                System.out.println("\n*** D ***");
+                this.console.println("\n*** D ***");
                 break;
             case 'Q': // quit program
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;

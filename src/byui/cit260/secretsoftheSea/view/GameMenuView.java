@@ -93,7 +93,7 @@ public class GameMenuView extends View {
             case 'Q': // exit the program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -144,19 +144,19 @@ public class GameMenuView extends View {
     private void displayMap() {
         Map gameMap = SecretsoftheSea.getCurrentGame().getGameMap();//get Game map by retrieving current game
         Location[][] locations = gameMap.getLocations();//get locations inside map
-        System.out.println("Map\n");
-        System.out.println("  | 0 | 1 | 2 | 3 | 4 |");
+        this.console.println("Map\n");
+        this.console.println("  | 0 | 1 | 2 | 3 | 4 |");
             for (int r = 0; r < 5; r++) {
-                System.out.print(Integer.toString(r) + " |");
+                this.console.print(Integer.toString(r) + " |");
                 for (int c = 0; c < 5; c++) {
                     if (locations[r][c].isVisited() == false) {
-                       System.out.print("?? |");
+                       this.console.print("?? |");
                     } 
                     else {
-                       System.out.print(locations[r][c].getScene().getMapSymbol() + "|");
+                       this.console.print(locations[r][c].getScene().getMapSymbol() + "|");
                     }
                 }
-                System.out.println("");
+                this.console.println("");
             }
     }
 

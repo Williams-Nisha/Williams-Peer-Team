@@ -23,7 +23,7 @@ public class InventoryControlTest {
      */
     @Test
     public void testCalWeightOfItems() {
-        System.out.println("calWeightOfItems");
+        this.console.println("calWeightOfItems");
         String name = "fuel";
         double weight = 400.0;
         double amount = 2.0;
@@ -32,79 +32,79 @@ public class InventoryControlTest {
         double result = instance.calWeightOfItems(name, weight, amount);
         assertEquals(expResult, result, 0.0001);
 //test 2
-        System.out.println("calWeightOfItems");
+        this.console.println("calWeightOfItems");
         name = "fuel";
         weight = -1;
         amount = 2.0;
         expResult = -1;
         result = instance.calWeightOfItems(name, weight, amount);
         if (result == -1) {
-            System.out.println("Weight cannot be negative.");
+            this.console.println("Weight cannot be negative.");
         }
         assertEquals(expResult, result, 0.0001);
 //test 3
 
-        System.out.println("calWeightOfItems");
+        this.console.println("calWeightOfItems");
         name = "fuel";
         weight = 400;
         amount = -1;
         expResult = -1;
         result = instance.calWeightOfItems(name, weight, amount);
         if (result == -1) {
-            System.out.println("Amount cannot be negative.");
+            this.console.println("Amount cannot be negative.");
         }
         assertEquals(expResult, result, 0.0001);
 //test 4
 
-        System.out.println("calWeightOfItems");
+        this.console.println("calWeightOfItems");
         name = "fuel";
         weight = 400;
         amount = 101;
         expResult = -1;
         result = instance.calWeightOfItems(name, weight, amount);
         if (result == -1) {
-            System.out.println("Amount of units cannot be higher than 99.");
+            this.console.println("Amount of units cannot be higher than 99.");
         }
         assertEquals(expResult, result, 0.0001);
 //test 5
 
-        System.out.println("calWeightOfItems");
+        this.console.println("calWeightOfItems");
         name = "fuel";
         weight = 0;
         amount = 2;
         expResult = 0;
         result = instance.calWeightOfItems(name, weight, amount);
         if (result == -1) {
-            System.out.println("Amount of units cannot be higher than 99.");
+            this.console.println("Amount of units cannot be higher than 99.");
         }
         assertEquals(expResult, result, 0.0001);
 //test 6
 
-        System.out.println("calWeightOfItems");
+        this.console.println("calWeightOfItems");
         name = "fuel";
         weight = 400;
         amount = 0;
         expResult = 0;
         result = instance.calWeightOfItems(name, weight, amount);
         if (result == -1) {
-            System.out.println("Amount of units cannot be higher than 99.");
+            this.console.println("Amount of units cannot be higher than 99.");
         }
         assertEquals(expResult, result, 0.0001);
 //test 7
 
-        System.out.println("calWeightOfItems");
+        this.console.println("calWeightOfItems");
         name = "fuel";
         weight = 400;
         amount = 99;
         expResult = 39600;
         result = instance.calWeightOfItems(name, weight, amount);
         if (result == -1) {
-            System.out.println("Amount of units cannot be higher than 99.");
+            this.console.println("Amount of units cannot be higher than 99.");
         }
         assertEquals(expResult, result, 0.0001);
 
 //Test 1
-        System.out.println("calTotalWeightOfItem");
+        this.console.println("calTotalWeightOfItem");
         double[] totalWeight = new double[4];
         totalWeight[0] = 800;
         totalWeight[1] = 600;
@@ -115,7 +115,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result,
                 0.0001);
         //Test 2
-        System.out.println("calTotalWeightOfItem");
+        this.console.println("calTotalWeightOfItem");
         totalWeight[0] = 800;
         totalWeight[1] = 600;
         totalWeight[2] = 150;
@@ -123,7 +123,7 @@ public class InventoryControlTest {
         expResult = -1;
         result = instance.calTotalWeightOfItem(totalWeight);
         if (result == -1) {
-            System.out.println("Individual weight item is lower than allowed amount.");
+            this.console.println("Individual weight item is lower than allowed amount.");
         }
         assertEquals(expResult, result,
                 0.0001);

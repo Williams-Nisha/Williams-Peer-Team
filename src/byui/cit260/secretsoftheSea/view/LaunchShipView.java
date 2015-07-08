@@ -35,19 +35,19 @@ public class LaunchShipView extends View {
         char choice = value.charAt(0);
 
         if (choice == 'U') {
-            System.out.println("Move Up");
+            this.console.println("Move Up");
         } else if (choice == 'D') {
-            System.out.println("Move Down");
+            this.console.println("Move Down");
         } else if (choice == 'L') {
-            System.out.println("Move Left");
+            this.console.println("Move Left");
         } else if (choice == 'R') {
-            System.out.println("Move Right");
+            this.console.println("Move Right");
         } else if (choice == 'L') {
             checkLaunch();
         } else if (choice == 'E') {
             return true;
         } else {
-            System.out.println("***Please enter a valid selection");
+            this.console.println("***Please enter a valid selection");
         }
         return false;
     }

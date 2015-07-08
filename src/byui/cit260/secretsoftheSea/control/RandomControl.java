@@ -27,7 +27,7 @@ public class RandomControl {
                 sum += cs;
             }
         
-            System.out.println("The total coins equals " + sum);
+            this.console.println("The total coins equals " + sum);
             return sum;
         } 
     }

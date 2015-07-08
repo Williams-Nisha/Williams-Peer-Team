@@ -30,18 +30,19 @@ public class ExchangeResourcesView extends View {
     @Override
 
     public boolean doAction(Object obj) {
-
+        Scanner input = new Scanner(System.in);
+        
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
         char choice = value.charAt(0);
-        Scanner keyboard = new Scanner(System.in);
+        
         try {
             switch (choice) {
                 case 'T': // trade items
-                    System.out.println("\n*** What item would you like to trade? Enter F for food, W for water, M for munition and G for fuel.***");
-                    char response = keyboard.next().toUpperCase().charAt(0);
-                    System.out.println("\n*** How many pounds would you like to trade?***");
-                    double lbs = Double.parseDouble(keyboard.next());
+                    this.console.println("\n*** What item would you like to trade? Enter F for food, W for water, M for munition and G for fuel.***");
+                    char response = input.nextLine().toUpperCase().charAt(0);
+                    this.console.println("\n*** How many pounds would you like to trade?***");
+                    double lbs = Double.parseDouble(input.next());
                     trade(response, lbs);
                     break;
                 case 'B': // get explore location options
@@ -53,13 +54,13 @@ public class ExchangeResourcesView extends View {
                 case 'Q': // exit the program
                     return true;
                 default:
-                    System.out.println("\n*** Invalid selection *** Try again");
+                    this.console.println("\n*** Invalid selection *** Try again");
                     break;
             }
         } catch (MapControlException me) {
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         } catch (NumberFormatException nf){
-            System.out.println("\nYou must enter a valid number."+"Try again or enter Q to quit.");
+            this.console.println("\nYou must enter a valid number."+"Try again or enter Q to quit.");
         }
         
         return false;
@@ -73,23 +74,23 @@ public class ExchangeResourcesView extends View {
             case 'F':
                  {
                     if (trade("food", weight)){
-                    System.out.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
+                    this.console.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
                     }
                 };
                 break;
             case 'W':
                     if (trade("water", weight)){
-                    System.out.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
+                    this.console.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
                     }
                 break;
             case 'M':
                     if (trade("food", weight)){
-                    System.out.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
+                    this.console.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
                     };
                 break;
             case 'G':
                     if (trade("food", weight)){
-                    System.out.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
+                    this.console.println("What would you like to trade for? Enter F for food, W for water, M for munition and G for fuel.");
                     };
         };
     }
@@ -102,11 +103,11 @@ public class ExchangeResourcesView extends View {
     }
 
     private void buy() {
-        System.out.println("\n***This is where you buy***");
+        this.console.println("\n***This is where you buy***");
     }
 
     private void sell() {
-        System.out.println("\n***This is where you sell***");
+        this.console.println("\n***This is where you sell***");
     }
 
 }

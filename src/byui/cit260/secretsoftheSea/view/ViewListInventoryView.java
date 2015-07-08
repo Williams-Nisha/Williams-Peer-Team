@@ -9,6 +9,11 @@ import byui.cit260.secretsoftheSea.control.InventoryControl;
 import byui.cit260.secretsoftheSea.control.RandomControl;
 import java.util.Scanner;
 import byui.cit260.secretsoftheSea.exceptions.InventoryControlException;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import secretsofthesea.SecretsoftheSea;
 
 /**
  *
@@ -16,6 +21,8 @@ import byui.cit260.secretsoftheSea.exceptions.InventoryControlException;
  */
 public class ViewListInventoryView extends View {
 
+    protected final BufferedReader keyboard = SecretsoftheSea.getInFile();
+    
     public ViewListInventoryView() {
         super("\n----------------------------------"
                 + "\n|Inventory Items  - Supplies      |"
@@ -35,23 +42,23 @@ public class ViewListInventoryView extends View {
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
         char choice = value.charAt(0);
-        Scanner keyboard = new Scanner(System.in);
+        
         try {
             switch (choice) {
                 case 'F':
-                    System.out.println("\n*** Please enter how many units from 0-99 you would like.: ***");
+                    this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
                     getInput2("food", 100);
                     break;
                 case 'W':
-                    System.out.println("\n*** Please enter how many units from 0-99 you would like.: ***");
+                    this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
                     getInput2("water", 50);
                     break;
                 case 'G':
-                    System.out.println("\n*** Please enter how many units from 0-99 you would like.: ***");
+                    this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
                     getInput2("fuel", 40);
                     break;
                 case 'M': // create and start a new game
-                    System.out.println("\n*** Please enter how many units from 0-99 you would like.: ***");
+                    this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
                     getInput2("munitions", 20);
                     break;
                 case 'T': // display total inventory weight
@@ -66,24 +73,29 @@ public class ViewListInventoryView extends View {
                 case 'Q': // quit program
                     return true;
                 default:
-                    System.out.println("\n*** Invalid selection *** Try again");
+                    ErrorView.display(this.getClass().getName(),
+                            "\n*** Invalid selection *** Try again");
                     break;
             }
         } catch (InventoryControlException me) {
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
+        } catch (IOException ex) {
+            this.console.println(ex.getMessage());
         }
         return false;
     }
 
     private void getInput2(String name, double weight)
-            throws InventoryControlException {
+            throws InventoryControlException, IOException {
         try {
-            Scanner keyboard = new Scanner(System.in);
-            double amount = Double.parseDouble(keyboard.next());
+            
+            double amount = Double.parseDouble(this.keyboard.readLine());
             InventoryControl ins = new InventoryControl();
             double w = ins.calWeightOfItems(name, weight, amount);
         } catch (NumberFormatException nf) {
-            System.out.println("\nYou must enter a valid number." + " Try again or enter Q to quit.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nYou must enter a valid number." + 
+                    " Try again or enter Q to quit." + nf.getMessage());
         }
     }
 }

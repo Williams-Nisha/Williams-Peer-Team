@@ -84,7 +84,7 @@ public class GameControl {
     //}
 
     static void assignScenesToLocations(Map map, Scene[] scenes) {
-        System.out.println();
+        this.console.println();
     }
 
 }

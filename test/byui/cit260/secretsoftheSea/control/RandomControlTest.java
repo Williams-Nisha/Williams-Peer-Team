@@ -22,11 +22,11 @@ public class RandomControlTest {
      */
     /*@Test
     public void testCalCoins() {
-        System.out.println("calCoins");
+        this.console.println("calCoins");
         
         // Test Case #1
         
-        System.out.println("\tTest case #1");
+        this.console.println("\tTest case #1");
         
         // input values for test case 1
         int gold = 5;
@@ -37,7 +37,7 @@ public class RandomControlTest {
         int result = instance.calCoins(gold, silver, copper);
         assertEquals(expResult, result);
         
-        System.out.println("\tTest case #2");
+        this.console.println("\tTest case #2");
         
         // input values for test case 2
         gold = -5;
@@ -47,7 +47,7 @@ public class RandomControlTest {
         result = instance.calCoins(gold, silver, copper);
         assertEquals(expResult, result);
         
-        System.out.println("\tTest case #3");
+        this.console.println("\tTest case #3");
         
         // input values for test case 2
         gold = 4;
@@ -57,7 +57,7 @@ public class RandomControlTest {
         result = instance.calCoins(gold, silver, copper);
         assertEquals(expResult, result);
         
-        System.out.println("\tTest case #4");
+        this.console.println("\tTest case #4");
         
         // input values for test case 4
         gold = 1;
@@ -67,7 +67,7 @@ public class RandomControlTest {
         result = instance.calCoins(gold, silver, copper);
         assertEquals(expResult, result);
         
-        System.out.println("\tTest case #5");
+        this.console.println("\tTest case #5");
         
         // input values for test case 5
         gold = 0;

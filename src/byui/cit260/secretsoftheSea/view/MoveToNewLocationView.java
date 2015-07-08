@@ -42,27 +42,27 @@ public class MoveToNewLocationView extends View{
                 this.moveLeft();
                 break;
             case 'R': // move right
-                System.out.println(this.moveRight());
+                this.console.println(this.moveRight());
                 break;
             case 'E': // exit the program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
             return false;
     }
 
     private void moveUp() {
-         System.out.println("*** moveUp function called ***");
+         this.console.println("*** moveUp function called ***");
     }
 
     private void moveDown() {
-        System.out.println("*** moveDown function called ***");
+        this.console.println("*** moveDown function called ***");
     }
 
     private void moveLeft() {
-        System.out.println("*** moveLeft function called ***");
+        this.console.println("*** moveLeft function called ***");
     }
 
     private String moveRight() {

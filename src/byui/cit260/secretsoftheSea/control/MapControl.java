@@ -65,7 +65,7 @@ public class MapControl {
     }
 
     static void moveCrewToStartingLocation(Map map) {
-        System.out.println("This is where the stub function for move crew to starting location.");
+        this.console.println("This is where the stub function for move crew to starting location.");
     }
 
     private static ImageIcon getImage(Scene startingScene, String citbyuicit260secretsoftheseaimagesstartin) {
