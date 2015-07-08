@@ -6,11 +6,15 @@
 package byui.cit260.secretsoftheSea.control;
 
 import byui.cit260.secretsoftheSea.exceptions.RandomControlException;
+import java.io.PrintWriter;
+import secretsofthesea.SecretsoftheSea;
 /**
  *
  * @author Lorien
  */
 public class RandomControl {
+    
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
 
     public int calCoins(int[] coins) throws RandomControlException {
 

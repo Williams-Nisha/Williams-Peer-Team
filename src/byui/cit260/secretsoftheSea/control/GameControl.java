@@ -12,6 +12,7 @@ import byui.cit260.secretsoftheSea.model.Map;
 import byui.cit260.secretsoftheSea.model.Player;
 import byui.cit260.secretsoftheSea.model.Ship;
 import byui.cit260.secretsoftheSea.model.Scene;
+import java.io.PrintWriter;
 import secretsofthesea.SecretsoftheSea;
 
 /**
@@ -19,6 +20,8 @@ import secretsofthesea.SecretsoftheSea;
  * @author Lorien
  */
 public class GameControl {
+
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
 
     public static void createNewGame(Player player) {
 
@@ -39,14 +42,14 @@ public class GameControl {
 
         // move crew to starting postition in the map
         MapControl.moveCrewToStartingLocation(map);
-    
-    }    
+
+    }
 
     public static InventoryList[] createInventoryList() {
 
         // created array(list) of inventory items
-        InventoryList[] inventory =
-                new InventoryList[4];
+        InventoryList[] inventory
+                = new InventoryList[4];
 
         InventoryList water = new InventoryList();
         water.setDescription("Water");
@@ -76,16 +79,13 @@ public class GameControl {
     }
 
     //public enum Item {
-
     //    water,
     //    food,
     //    munition,
     //    fuel;
     //}
-
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
-        this.console.println();
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        System.out.println();
     }
 
 }
-

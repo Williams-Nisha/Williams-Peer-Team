@@ -6,12 +6,16 @@
 package byui.cit260.secretsoftheSea.control;
 
 import byui.cit260.secretsoftheSea.exceptions.ShipControlException;
+import java.io.PrintWriter;
+import secretsofthesea.SecretsoftheSea;
 
 /**
  *
  * @author Lorien
  */
 public class ShipControl {
+    
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
 
     public double calStorage(double height, double width, double length) throws ShipControlException {
 

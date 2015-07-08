@@ -5,7 +5,9 @@
  */
 package byui.cit260.secretsoftheSea.model;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
+import secretsofthesea.SecretsoftheSea;
 /**
  *
  * @author Lorien
@@ -18,7 +20,7 @@ public class Map implements Serializable{
     private int noOfRows;
     private int noOfColumns;
     private Location[][] locations;
-    
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
     
     public Map() {
     }

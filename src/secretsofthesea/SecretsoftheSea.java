@@ -71,7 +71,7 @@ public class SecretsoftheSea {
             SecretsoftheSea.inFile
                     = new BufferedReader(new InputStreamReader(System.in));
 
-            SecretsoftheSea.outFile = new PrintWriter(this.console, true);
+            SecretsoftheSea.outFile = new PrintWriter(System.out, true);
                
             // open log file
             String filePath = "log.txt";
@@ -84,7 +84,7 @@ public class SecretsoftheSea {
 
         } catch (Throwable e) {
 
-            this.console.println("Exception: " + e.toString() +
+            System.out.println("Exception: " + e.toString() +
                                 "\nCause: " + e.getCause() +
                                 "\nMessage: " + e.getMessage());
                                 
@@ -104,12 +104,12 @@ public class SecretsoftheSea {
                     SecretsoftheSea.logFile.close();
                     
         }   catch (IOException ex) {
-                ErrorView.display(this.getClass().getName(),
+                ErrorView.display("SecretsoftheSea",
                         "Error closing files");
                 return;
         }
     }
-
+    }
     public static Game getCurrentGame() {
         return currentGame;
     }

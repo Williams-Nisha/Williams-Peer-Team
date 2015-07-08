@@ -5,6 +5,8 @@
  */
 package byui.cit260.secretsoftheSea.control;
 import byui.cit260.secretsoftheSea.exceptions.InventoryControlException;
+import java.io.PrintWriter;
+import secretsofthesea.SecretsoftheSea;
 
 /**
  *
@@ -24,6 +26,8 @@ import byui.cit260.secretsoftheSea.exceptions.InventoryControlException;
  fuel, water, munition, 
  */
 public class InventoryControl {
+    
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
 
     public double calWeightOfItems(String name, double weight, double amount) 
     throws InventoryControlException {
