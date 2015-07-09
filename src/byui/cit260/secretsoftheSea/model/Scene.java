@@ -5,8 +5,10 @@
  */
 package byui.cit260.secretsoftheSea.model;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
 import javax.swing.ImageIcon;
+import secretsofthesea.SecretsoftheSea;
 
 /**
  *
@@ -18,6 +20,7 @@ public class Scene implements Serializable {
     private double travelTime;
     private boolean blocked;
     private String mapSymbol;
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
     
     public String getDescription() {
         return description;

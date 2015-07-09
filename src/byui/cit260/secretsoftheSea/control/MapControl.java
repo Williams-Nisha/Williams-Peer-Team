@@ -13,12 +13,15 @@ import byui.cit260.secretsoftheSea.model.Scene;
 import javax.swing.ImageIcon;
 import secretsofthesea.SecretsoftheSea;
 import byui.cit260.secretsoftheSea.exceptions.MapControlException;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Lorien
  */
 public class MapControl {
+    
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
 
     public static Map createMap() {
         // create the map
@@ -65,7 +68,7 @@ public class MapControl {
     }
 
     static void moveCrewToStartingLocation(Map map) {
-        this.console.println("This is where the stub function for move crew to starting location.");
+        System.out.println("This is where the stub function for move crew to starting location.");
     }
 
     private static ImageIcon getImage(Scene startingScene, String citbyuicit260secretsoftheseaimagesstartin) {
