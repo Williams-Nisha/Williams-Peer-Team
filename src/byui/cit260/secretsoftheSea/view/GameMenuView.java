@@ -10,6 +10,11 @@ import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Map;
 import secretsofthesea.SecretsoftheSea;
 import byui.cit260.secretsoftheSea.exceptions.RandomControlException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,7 +35,7 @@ public class GameMenuView extends View {
                 + "\nV - View Map"
                 + "\nC - View Crew"
                 + "\nX - Exchange resources"
-                + "\nT - Total Coins"
+                + "\nT - Print Coins"
                 + "\nW-  Work on ship"
                 + "\nL - Launch the ship"
                 + "\nD - Dock the ship"
@@ -63,11 +68,11 @@ public class GameMenuView extends View {
             case 'X'://display exchange resources menu
                 this.exchangeResources();
                 break;
-            case 'T':{
+            case 'T':
+        {
             try {
-                //display total coins
-                this.totalCoins();
-            } catch (RandomControlException ex) {
+                printCoins();
+            } catch (IOException ex) {
                 Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -122,6 +127,7 @@ public class GameMenuView extends View {
         ExchangeResourcesView exchangeResources = new ExchangeResourcesView();
         exchangeResources.display();
     }
+
     private void launchShip() {
         LaunchShipView launchShip = new LaunchShipView();
         launchShip.display();
@@ -140,37 +146,42 @@ public class GameMenuView extends View {
 //    private void workOnShip() {
 //        WorkOnShipView workOnShip = new WorkOnShipView();
 //        workOnShip.display();
-
     private void displayMap() {
         Map gameMap = SecretsoftheSea.getCurrentGame().getGameMap();//get Game map by retrieving current game
         Location[][] locations = gameMap.getLocations();//get locations inside map
         this.console.println("Map\n");
         this.console.println("  | 0 | 1 | 2 | 3 | 4 |");
-            for (int r = 0; r < 5; r++) {
-                this.console.print(Integer.toString(r) + " |");
-                for (int c = 0; c < 5; c++) {
-                    if (locations[r][c].isVisited() == false) {
-                       this.console.print("?? |");
-                    } 
-                    else {
-                       this.console.print(locations[r][c].getScene().getMapSymbol() + "|");
-                    }
+        for (int r = 0; r < 5; r++) {
+            this.console.print(Integer.toString(r) + " |");
+            for (int c = 0; c < 5; c++) {
+                if (locations[r][c].isVisited() == false) {
+                    this.console.print("?? |");
+                } else {
+                    this.console.print(locations[r][c].getScene().getMapSymbol() + "|");
                 }
-                this.console.println("");
             }
+            this.console.println("");
+        }
     }
 
     private void viewCrew() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void totalCoins() throws RandomControlException {
-        RandomControl rc = new RandomControl();
-        int [] coins = new int [3];
-        coins [0] = 35;
-        coins [1] = 21;
-        coins [2] = 4;
-        rc.calCoins(coins);
+    private void printCoins() throws FileNotFoundException, IOException {
+        try {
+        console.println("Please select a path to print coin information");
+            String path = keyboard.readLine();
+            path = path.trim();
+            PrintWriter out = new PrintWriter(new File(path));
+            String [] coins = new String[3];
+            coins[0]="gold";
+            coins[1]="copper";
+            coins[2]="silver";
+            out.printf(path,"hello");
+        } finally {
         
-    }
+        }   
+        }
+
 }

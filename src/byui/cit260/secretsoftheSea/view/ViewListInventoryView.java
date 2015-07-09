@@ -71,9 +71,9 @@ public class ViewListInventoryView extends View {
                     fuel.setWeight(w);
                     break;
                 case 'M': // create and start a new game
-                    InventoryList munitions = GameControl.getGame().getInventory()[Item.Munitions.ordinal()];
+                    InventoryList munitions = GameControl.getGame().getInventory()[Item.Munition.ordinal()];
                     this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
-                    w = getInput2("munitions", 20);
+                    w = getInput2("munition", 20);
                     munitions.setWeight(w);
                     break;
                 case 'T': // display total inventory weight

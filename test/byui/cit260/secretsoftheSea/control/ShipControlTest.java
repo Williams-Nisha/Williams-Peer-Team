@@ -6,14 +6,18 @@
 package byui.cit260.secretsoftheSea.control;
 
 import byui.cit260.secretsoftheSea.exceptions.ShipControlException;
+import java.io.PrintWriter;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import secretsofthesea.SecretsoftheSea;
 
 /**
  *
  * @author Lorien
  */
 public class ShipControlTest {
+    
+    protected final PrintWriter console = SecretsoftheSea.getOutFile();
     
     public ShipControlTest() {
     }
@@ -24,6 +28,8 @@ public class ShipControlTest {
      */
     @Test
     public void testCalStorage() throws ShipControlException {
+        
+       
          
         this.console.println("calStorage");
         
