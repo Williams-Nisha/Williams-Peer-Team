@@ -118,16 +118,4 @@ public class ViewListInventoryView extends View {
         }
         return -1;
     }
-
-    private void printInventoryItems(InventoryList[] inventoryItems, String outputLocation) throws FileNotFoundException {
-        //create BufferedREader object for input file
-        try (PrintWriter out = new PrintWriter(new File(outputLocation))){
-           out.println(); //print title and column headings
-           out.printf(outputLocation, inventoryItems);
-           out.printf(outputLocation, inventoryItems);
-        } finally{
-
-        }
-                
-    }
 }
