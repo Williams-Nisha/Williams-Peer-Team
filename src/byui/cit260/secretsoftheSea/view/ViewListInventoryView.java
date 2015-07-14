@@ -101,6 +101,7 @@ public class ViewListInventoryView extends View {
         }
         return false;
     }
+            
 
     private double getInput2(String name, double weight)
             throws InventoryControlException, IOException {
