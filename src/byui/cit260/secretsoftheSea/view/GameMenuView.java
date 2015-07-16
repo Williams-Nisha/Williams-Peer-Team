@@ -145,9 +145,6 @@ public class GameMenuView extends View {
         helpMenu.display();
     }
 
-//    private void workOnShip() {
-//        WorkOnShipView workOnShip = new WorkOnShipView();
-//        workOnShip.display();
     private void displayMap() {
         Location[][] locations = GameControl.getGame().getMap().getLocations();//get locations inside map
         this.console.println("Map\n");

@@ -22,6 +22,8 @@ public class MoveToNewLocationView extends View{
             + "\nL - Move Left"
             + "\nR - Move Right"
             + "\nQ - Quit"
+            + "\nE - Explore Location"
+            + "\nQ - Quit the Move Menu"
             + "\n----------------------------------");
     }    
     @Override
@@ -46,6 +48,8 @@ public class MoveToNewLocationView extends View{
                 break;
             case 'Q': // exit the program
                 return;
+            case 'E': //dock ship and explore site
+                this.explore();;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
@@ -53,19 +57,23 @@ public class MoveToNewLocationView extends View{
     }
 
     private void moveUp() {
-         this.console.println("*** moveUp function called ***");
+         this.console.println("You chose to move up to a new location.");
     }
 
     private void moveDown() {
-        this.console.println("*** moveDown function called ***");
+        this.console.println("Your ship is carried downwind to a new location.");
     }
 
     private void moveLeft() {
-        this.console.println("*** moveLeft function called ***");
+        this.console.println("The crew turns the ship left to head to a new island.");
     }
 
     private String moveRight() {
-        return "*** moveRight function called ***";
+        return "The rough waters take you to the location to the right of you current position.";
+    }
+
+    private void explore() {
+        this.console.println("The crew docks the ship at the new location and everyone goes out to explore.");
     }
 
     
