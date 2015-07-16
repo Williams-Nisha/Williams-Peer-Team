@@ -29,7 +29,7 @@ public class ExchangeResourcesView extends View {
 
     @Override
 
-    public boolean doAction(Object obj) {
+    public void doAction(Object obj) {
         Scanner input = new Scanner(System.in);
         
         String value = String.valueOf(obj);
@@ -52,7 +52,7 @@ public class ExchangeResourcesView extends View {
                     this.sell();
                     break;
                 case 'Q': // exit the program
-                    return true;
+                    return;
                 default:
                     this.console.println("\n*** Invalid selection *** Try again");
                     break;
@@ -63,7 +63,7 @@ public class ExchangeResourcesView extends View {
             this.console.println("\nYou must enter a valid number."+"Try again or enter Q to quit.");
         }
         
-        return false;
+        return;
     }
 
     private void trade(char choice, double weight)

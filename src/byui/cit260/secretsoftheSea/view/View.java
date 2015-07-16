@@ -33,11 +33,13 @@ public abstract class View implements ViewInterface {
             this.console.println(this.promptMessage); // display the main menu
 
             String input = this.getInput(); // get the user's selection
+            input = input.toUpperCase();
             selection = input.charAt(0); // get first character of string
 
-            this.doAction(selection); // do action based on selection
+           doAction(selection); // do action based on selection
 
         } while (selection != 'Q'); // a selection is not "Quit"
+        
     }
 
     @Override //our code is slightly different from example

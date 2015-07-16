@@ -23,13 +23,13 @@ public class MainMenuView extends View {
             + "\nN - New Game"
             + "\nH - Get help on how to play the game"
             + "\nS - Save game"
-            + "\nE - Exit"
+            + "\nQ - Quit"
             + "\n----------------------------------");
     }
     
  
     @Override
-    public boolean doAction(Object obj) {
+    public void doAction(Object obj) {
         
         String value = String.valueOf(obj);
         value = value.toUpperCase();//convert to all upper case
@@ -48,13 +48,12 @@ public class MainMenuView extends View {
             case 'S': // save the current game
                 this.saveGame();
                 break;
-            case 'E': // exit the program
-                return true;
+            case 'Q': // exit the program
+                return;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        return false;
     }
 
     private void startNewGame()  { 

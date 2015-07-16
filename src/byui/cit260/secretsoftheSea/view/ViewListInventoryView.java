@@ -45,10 +45,10 @@ public class ViewListInventoryView extends View {
     }
 
     @Override
-    public boolean doAction(Object obj) {
+    public void doAction(Object obj) {
 
         String value = String.valueOf(obj);
-        value = value.toUpperCase();//conver to all upper case
+        value = value.toUpperCase();//convert to all upper case
         char choice = value.charAt(0);
         double w;
         try {
@@ -86,7 +86,7 @@ public class ViewListInventoryView extends View {
                     totalWeight[3] = 120;
                     tw.calTotalWeightOfItem(totalWeight);
                 case 'Q': // quit program
-                    return true;
+                    return;
                 default:
                     ErrorView.display(this.getClass().getName(),
                             "\n*** Invalid selection *** Try again");
@@ -97,7 +97,6 @@ public class ViewListInventoryView extends View {
         } catch (IOException ex) {
             this.console.println(ex.getMessage());
         }
-        return false;
     }
 
     private double getInput2(String name, double weight)

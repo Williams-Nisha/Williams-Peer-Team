@@ -22,12 +22,12 @@ public class DockTheShipView extends View {
                 + "\nL - Move Left"
                 + "\nR - Move Right"
                 + "\nK - Dock"
-                + "\nE - Exit"
+                + "\nQ - Quit"
                 + "\n----------------------------------");
     }
 
     @Override
-    public boolean doAction(Object obj) {
+    public void doAction(Object obj) {
 
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
@@ -43,12 +43,12 @@ public class DockTheShipView extends View {
             this.console.println(this.moveRight());
         } else if (choice == 'K') {
             this.dockShip();
-        } else if (choice == 'E') {
-            return true;
+        } else if (choice == 'Q') {
+            return;
         } else {
             this.console.println("\n*** Invalid selection *** Try again");
         }
-        return false;
+        return;
     }
 
     private void moveUp() {

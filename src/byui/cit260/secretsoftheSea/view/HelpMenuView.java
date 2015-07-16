@@ -33,7 +33,7 @@ public class HelpMenuView extends View {
 
     @Override
 
-    public boolean doAction(Object obj) {
+    public void doAction(Object obj) {
 
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
@@ -121,12 +121,12 @@ public class HelpMenuView extends View {
                                     + " R to move right, and D to dock the ship.");
                 break;
             case 'Q': // quit program
-                System.exit(0);
+                return;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        return false;
+        return;
     }
 
 }

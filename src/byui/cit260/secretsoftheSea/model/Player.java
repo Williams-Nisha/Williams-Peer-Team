@@ -6,23 +6,33 @@
  */
 package byui.cit260.secretsoftheSea.model;
 
+import byui.cit260.secretsoftheSea.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Lorien
  */
 public class Player implements Serializable {
-    
+
     // class instance variables
     private String name;
     private double bestTime;
+    private int row;
+    private int column;
+    private Location[][] locations;
 
     public Player() {
     }
-    
-    public Player(String name) {
+
+    public Player(String name, int row, int column) {
         this.name = name;
+        this.row = row;
+        this.column = column;
+//        locations = new GameControl().getGame().getMap().getLocations();//get locations inside map
+//        locations[row][column].setVisited(true);
+//        locations[row][column].getScene().setMapSymbol("ST ");
     }
 
     public String getName() {
@@ -71,6 +81,5 @@ public class Player implements Serializable {
         }
         return true;
     }
-    
-    
+
 }

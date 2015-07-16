@@ -23,13 +23,13 @@ public class ShipStatusView extends View {
             + "\nM - Morale"
             + "\nP - Speed"
             + "\nD - Defense"
-            + "\nE - Exit"
+            + "\nQ - Quit"
             + "\n----------------------------------");
     }
 
         @Override
 
-    public boolean doAction(Object obj) {
+    public void doAction(Object obj) {
 
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
@@ -48,13 +48,13 @@ public class ShipStatusView extends View {
             case 'D': // save the current game
                 this.defense ();
                 break;
-            case 'E': // exit the program
-                return true;
+            case 'Q': // exit the program
+                return;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
-                return false;
+                return;
     }
 
     private void storage() {

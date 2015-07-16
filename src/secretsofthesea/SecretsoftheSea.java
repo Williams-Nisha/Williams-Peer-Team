@@ -30,7 +30,7 @@ import java.io.PrintWriter;
 public class SecretsoftheSea {
 
     private static Game currentGame = null;
-    private static Player player = null;
+    private static Player player = new Player("",0,0);
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;

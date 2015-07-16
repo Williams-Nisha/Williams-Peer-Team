@@ -71,7 +71,7 @@ public class MapControl {
         System.out.println("This is where the stub function for move crew to starting location.");
     }
 
-    private static ImageIcon getImage(Scene startingScene, String citbyuicit260secretsoftheseaimagesstartin) {
+    private static ImageIcon getImage(Scene startingScene, String citbyuicit260secretsoftheseaimagesstarting) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

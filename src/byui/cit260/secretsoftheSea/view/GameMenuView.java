@@ -5,11 +5,13 @@
  */
 package byui.cit260.secretsoftheSea.view;
 
+import byui.cit260.secretsoftheSea.control.GameControl;
 import byui.cit260.secretsoftheSea.control.RandomControl;
 import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Map;
 import secretsofthesea.SecretsoftheSea;
 import byui.cit260.secretsoftheSea.exceptions.RandomControlException;
+import byui.cit260.secretsoftheSea.model.Game;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -46,7 +48,7 @@ public class GameMenuView extends View {
 
     @Override
 
-    public boolean doAction(Object obj) {
+    public void doAction(Object obj) {
 
         String value = String.valueOf(obj);
         value = value.toUpperCase();//conver to all upper case
@@ -64,7 +66,7 @@ public class GameMenuView extends View {
                 break;
             case 'S'://view ship status
                 this.shipStatus();
-                return true;
+                return;
             case 'X'://display exchange resources menu
                 this.exchangeResources();
                 break;
@@ -88,20 +90,20 @@ public class GameMenuView extends View {
             //    return true;
             case 'L'://display launch ship menu
                 this.launchShip();
-                return true;
+                return;
             case 'D'://display dock ship menu
                 this.dockShip();
-                return true;
+                return;
             case 'H'://
                 this.displayHelpMenu();
-                return true;
+                return;
             case 'Q': // exit the program
-                return true;
+                return;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        return false;
+        return;
     }
 
     private void move() {
@@ -147,8 +149,7 @@ public class GameMenuView extends View {
 //        WorkOnShipView workOnShip = new WorkOnShipView();
 //        workOnShip.display();
     private void displayMap() {
-        Map gameMap = SecretsoftheSea.getCurrentGame().getGameMap();//get Game map by retrieving current game
-        Location[][] locations = gameMap.getLocations();//get locations inside map
+        Location[][] locations = GameControl.getGame().getMap().getLocations();//get locations inside map
         this.console.println("Map\n");
         this.console.println("  | 0 | 1 | 2 | 3 | 4 |");
         for (int r = 0; r < 5; r++) {
