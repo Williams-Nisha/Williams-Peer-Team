@@ -12,6 +12,8 @@ import java.util.Scanner;
 import byui.cit260.secretsoftheSea.exceptions.InventoryControlException;
 import byui.cit260.secretsoftheSea.model.InventoryList;
 import byui.cit260.secretsoftheSea.model.Item;
+import byui.cit260.secretsoftheSea.view.ErrorView;
+import byui.cit260.secretsoftheSea.view.View;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,7 +40,6 @@ public class ViewListInventoryView extends View {
                 + "\nG - Fuel - each unit is 40 lbs"
                 + "\nM - Munitions - each unit is 20 lbs"
                 + "\nT - Total inventory weight"
-                + "\nP - Print Inventory Items"
                 + "\nQ - Quit "
                 + "\n----------------------------------");
     }
@@ -71,10 +72,10 @@ public class ViewListInventoryView extends View {
                     fuel.setWeight(w);
                     break;
                 case 'M': // create and start a new game
-                    InventoryList munitions = GameControl.getGame().getInventory()[Item.Munition.ordinal()];
+                    InventoryList munition = GameControl.getGame().getInventory()[Item.Munition.ordinal()];
                     this.console.println("\n*** Please enter how many units from 0-99 you would like.: ***");
                     w = getInput2("munition", 20);
-                    munitions.setWeight(w);
+                    munition.setWeight(w);
                     break;
                 case 'T': // display total inventory weight
                     InventoryControl tw = new InventoryControl();
@@ -84,9 +85,6 @@ public class ViewListInventoryView extends View {
                     totalWeight[2] = 160;
                     totalWeight[3] = 120;
                     tw.calTotalWeightOfItem(totalWeight);
-                case 'P': //printing inventory items
-                    printInventoryItems(GameControl.getGame().getInventory(),"inventoryReport.txt");
-                    break;
                 case 'Q': // quit program
                     return true;
                 default:
@@ -101,7 +99,6 @@ public class ViewListInventoryView extends View {
         }
         return false;
     }
-            
 
     private double getInput2(String name, double weight)
             throws InventoryControlException, IOException {
