@@ -143,9 +143,6 @@ public class GameMenuView extends View {
         helpMenu.display();
     }
 
-//    private void workOnShip() {
-//        WorkOnShipView workOnShip = new WorkOnShipView();
-//        workOnShip.display();
     private void displayMap() {
         Map gameMap = SecretsoftheSea.getCurrentGame().getGameMap();//get Game map by retrieving current game
         Location[][] locations = gameMap.getLocations();//get locations inside map
