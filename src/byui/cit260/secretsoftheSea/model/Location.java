@@ -24,6 +24,14 @@ public class Location implements Serializable{
     private Scene scene;
     private ArrayList<Crew> crew;
 
+    public ArrayList<Crew> getCrew() {
+        return crew;
+    }
+
+    public void setCrew(ArrayList<Crew> crew) {
+        this.crew = crew;
+    }
+
     public Location() {
     }
 

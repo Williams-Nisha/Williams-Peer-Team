@@ -11,6 +11,7 @@ import byui.cit260.secretsoftheSea.model.Location;
 import byui.cit260.secretsoftheSea.model.Map;
 import secretsofthesea.SecretsoftheSea;
 import byui.cit260.secretsoftheSea.exceptions.RandomControlException;
+import byui.cit260.secretsoftheSea.model.Crew;
 import byui.cit260.secretsoftheSea.model.Game;
 import java.io.BufferedReader;
 import java.io.File;
@@ -83,7 +84,7 @@ public class GameMenuView extends View {
                 this.displayMap();
                 break;
             case 'C'://view crew
-                this.viewCrew();
+                this.displayCrew();
                 break;
             //case 'W'://display work on shi[
             //    this.workOnShip();
@@ -113,6 +114,7 @@ public class GameMenuView extends View {
 
     private void explore() {
         ExploreLocationView explore = new ExploreLocationView();
+        explore.ExploreLocation();
     }
 
     private void inventoryItems() {
@@ -162,8 +164,14 @@ public class GameMenuView extends View {
         }
     }
 
-    private void viewCrew() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void displayCrew() {
+        this.console.println("\n Your crew awaits for a high seas adventure! Meet your crew.\n\nSkivvie_Jones(\"Even though he's been down to his skivvies a few times, he always find a way out.\",\"Pirate\"),\n" +
+                            " \nOne_eyed_Oscar(\"Don't let his one eye fool you; he's watching everything.\",\"Pirate\"),\n" +
+                            " \nTimmy_Longthumbs(\"An unscruptulous character, but great at nabbing things in a pinch.\",\"Captain\"),\n" +
+                            " \nJack_Shortbeard(\"What he lacks in height he makes up with ambition.\",\"Pirate\"),\n" +
+                            " \nMulligan_Morgan(\"She's had a few close calls, but always ends up on top.\",\"Pirate\"),\n" +
+                            " \nFreebird_Freida(\"She has a wild spirit, but is loyal.\",\"Pirate\");\n" +
+                            "    ");
     }
 
     private void printCoins() throws FileNotFoundException, IOException {
@@ -181,5 +189,5 @@ public class GameMenuView extends View {
         
         }   
         }
-
 }
+

@@ -13,6 +13,8 @@ import byui.cit260.secretsoftheSea.model.Scene;
 import javax.swing.ImageIcon;
 import secretsofthesea.SecretsoftheSea;
 import byui.cit260.secretsoftheSea.exceptions.MapControlException;
+import byui.cit260.secretsoftheSea.model.Crew;
+import java.awt.Point;
 import java.io.PrintWriter;
 
 /**
@@ -37,7 +39,7 @@ public class MapControl {
     }
 
     private static Scene[] createScenes() {
-        BufferedImage image = null;
+        //BufferedImage image = null;
 
         Game game = SecretsoftheSea.getCurrentGame();
 
@@ -68,12 +70,16 @@ public class MapControl {
     }
 
     static void moveCrewToStartingLocation(Map map) {
-        System.out.println("This is where the stub function for move crew to starting location.");
+        ;
     }
-
+    
+    public static int moveCrewToLocation(Crew crew, Point coordinates){
+        return 1;
+    }
     private static ImageIcon getImage(Scene startingScene, String citbyuicit260secretsoftheseaimagesstarting) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 
     public enum SceneType {
 

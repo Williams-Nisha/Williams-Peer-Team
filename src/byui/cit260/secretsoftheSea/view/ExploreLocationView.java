@@ -54,6 +54,5 @@ public class ExploreLocationView {
     private void markVisited() {
         this.console.println("This location has been marked as visited. Come again soon!");
     }
-    
-    
-    }
+
+}

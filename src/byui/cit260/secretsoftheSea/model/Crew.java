@@ -5,6 +5,7 @@
  */
 package byui.cit260.secretsoftheSea.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -25,12 +26,18 @@ public enum Crew implements Serializable{
     // class instance variables
     private final String description;
     private final String type;
+    private final Point coordinates;
 
     Crew(String description, String type) {
         this.description = description;
         this.type = type;
+        this.coordinates = new Point(1,1);
 }
 
+        
+    public Point getCoordinates(){
+        return coordinates;
+    }
     public String getDescription() {
         return description;
     }
