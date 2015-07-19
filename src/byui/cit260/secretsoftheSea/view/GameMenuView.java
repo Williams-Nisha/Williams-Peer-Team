@@ -86,7 +86,7 @@ public class GameMenuView extends View {
             case 'C'://view crew
                 this.displayCrew();
                 break;
-            //case 'W'://display work on shi[
+            //case 'W'://display work on ship
             //    this.workOnShip();
             //    return true;
             case 'L'://display launch ship menu
@@ -114,7 +114,7 @@ public class GameMenuView extends View {
 
     private void explore() {
         ExploreLocationView explore = new ExploreLocationView();
-        explore.ExploreLocation();
+        explore.displayBanner();
     }
 
     private void inventoryItems() {

@@ -66,7 +66,7 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        this.console.println("*** startExistingGame function called ***");
+        this.console.println("You cannot start an existing game at this time.");
     }
 
     private void displayHelpMenu() {
@@ -75,7 +75,7 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        this.console.println("*** startExistingGame function called ***");
+        this.console.println("You cannot save an existing game at this time.");
     }
     }
     

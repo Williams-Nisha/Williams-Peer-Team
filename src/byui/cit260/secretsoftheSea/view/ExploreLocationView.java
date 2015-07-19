@@ -15,8 +15,10 @@ import secretsofthesea.SecretsoftheSea;
 public class ExploreLocationView {
     
     protected final PrintWriter console = SecretsoftheSea.getOutFile();
-    
-    public void ExploreLocation() {
+   public ExploreLocationView() {
+       
+   }   
+   public void ExploreLocation() {
         //display a success banner for the location
         this.displayBanner();
         //display the information about the site
@@ -26,10 +28,11 @@ public class ExploreLocationView {
     
     }
 
-    private void displayBanner() {
+    public void displayBanner() {
         this.console.println("Welcome! You have made it to the location:");
         boolean locationName = false;
-        this.console.print(locationName);
+        //this.console.print(locationName);
+        this.displayLocationInformation();
     }
 
     private void displayLocationInformation() {
@@ -54,5 +57,6 @@ public class ExploreLocationView {
     private void markVisited() {
         this.console.println("This location has been marked as visited. Come again soon!");
     }
+
 
 }
